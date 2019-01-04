@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/wcf" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/wcf" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:58691/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="Etudiant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EtatCompte" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EtatSanction" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NbNonReserve" type="xs:int" />
+      <xs:element minOccurs="0" name="Niveau" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumCarte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prenom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sanction" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Specialite" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Etudiant" nillable="true" type="tns:Etudiant" />
+  <xs:complexType name="Ensignant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EtatCompte" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EtatSanction" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Grade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Matricule" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NbNonReserve" type="xs:int" />
+      <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prenom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sanction" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ensignant" nillable="true" type="tns:Ensignant" />
+  <xs:complexType name="ArrayOfOuvrage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ouvrage" nillable="true" type="tns:Ouvrage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOuvrage" nillable="true" type="tns:ArrayOfOuvrage" />
+  <xs:complexType name="Ouvrage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Auteur" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodeBarre" type="xs:int" />
+      <xs:element minOccurs="0" name="Etat" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MotCle" nillable="true" type="q1:ArrayOfanyType" />
+      <xs:element minOccurs="0" name="Theme" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Titre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ouvrage" nillable="true" type="tns:Ouvrage" />
+  <xs:complexType name="OuvrageEmprent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeBarre" type="xs:int" />
+      <xs:element minOccurs="0" name="DateEmprent" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Etat" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Numemprent" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OuvrageEmprent" nillable="true" type="tns:OuvrageEmprent" />
+  <xs:complexType name="ListeAttente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeBarre" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Priorite" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListeAttente" nillable="true" type="tns:ListeAttente" />
+</xs:schema>

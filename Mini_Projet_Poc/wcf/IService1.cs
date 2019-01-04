@@ -1,0 +1,163 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+
+namespace wcf
+{
+	// REMARQUE : vous pouvez utiliser la commande Renommer du menu Refactoriser pour changer le nom d'interface "IService1" à la fois dans le code et le fichier de configuration.
+	[ServiceContract]
+	public interface IService1
+	{
+		[OperationContract]
+		void sanctionner();
+		[OperationContract]
+		bool CreeComptee(Etudiant e);
+		[OperationContract]
+		bool CreeCompte(Ensignant e);
+		[OperationContract]
+		List<Ouvrage> Consulter();
+		[OperationContract]
+		List<Ouvrage> Recherche(Ouvrage o);
+		[OperationContract]
+		bool Connexionn(Etudiant e);
+		[OperationContract]
+		bool Connexion(Ensignant e);
+		[OperationContract]
+		bool ModifierMotPass(Etudiant e);
+		[OperationContract]
+		bool Reserver(OuvrageEmprent o);
+		[OperationContract]
+		bool InscrireAttente(ListeAttente l);
+		
+
+		// TODO: ajoutez vos opérations de service ici
+	}
+	/*
+	[ServiceContract]
+	public interface IService2
+	{
+		[OperationContract]
+		bool AjouterOuvrage(Ouvrage o);
+		[OperationContract]
+		bool ConfirmerEmprent(OuvrageEmprent e);
+		[OperationContract]
+		List<Ouvrage> Consulter();
+		[OperationContract]
+		bool Connexion(Bibliothequer b);
+		[OperationContract]
+		bool ConfirmerCompte(Ensignant e);
+		[OperationContract]
+		bool ConfirmerCompte(Etudiant e);
+		[OperationContract]
+		bool RendreEmprent(OuvrageEmprent o);
+
+	}*/
+	// Utilisez un contrat de données comme indiqué dans l'exemple ci-après pour ajouter les types composites aux opérations de service.
+	// Vous pouvez ajouter des fichiers XSD au projet. Une fois le projet généré, vous pouvez utiliser directement les types de données qui y sont définis, avec l'espace de noms "serverwcf.ContractType".
+	[DataContract]
+	public class Ensignant
+	{
+
+
+		public int nbNonReserve;
+		[DataMember]
+		public string Matricule { get; set; }
+		[DataMember]
+		public string Nom { get; set; }
+		[DataMember]
+		public string Prenom { get; set; }
+		[DataMember]
+		public string Grade { get; set; }
+		[DataMember]
+		public string Password { get; set; }
+		[DataMember]
+		public bool EtatSanction { get; set; }
+		[DataMember]
+		public DateTime Sanction { get; set; }
+		[DataMember]
+		public bool EtatCompte { get; set; }
+		[DataMember]
+		public int NbNonReserve { get; set; }
+	}
+
+	[DataContract]
+	public class Bibliothequer
+	{
+
+		[DataMember]
+		public string Password { get; set; }
+
+		[DataMember]
+		public string Id { get; set; }
+	}
+	[DataContract]
+	public class Etudiant
+	{
+		[DataMember]
+		public string NumCarte { get; set; }
+		[DataMember]
+		public string Password { get; set; }
+		[DataMember]
+		public string Nom { get; set; }
+		[DataMember]
+		public string Prenom { get; set; }
+		[DataMember]
+		public string Specialite { get; set; }
+		[DataMember]
+		public string Niveau { get; set; }
+		[DataMember]
+		public bool EtatCompte { get; set; }
+		[DataMember]
+		public int NbNonReserve { get; set; }
+		[DataMember]
+		public bool EtatSanction { get; set; }
+		[DataMember]
+		public DateTime Sanction { get; set; }
+	}
+	[DataContract]
+	public class ListeAttente
+	{
+		[DataMember]
+		public int CodeBarre { get; set; }
+		[DataMember]
+		public string Id { get; set; }
+		[DataMember]
+		public int Priorite { get; set; }
+	}
+	[DataContract]
+	public class Ouvrage
+	{
+		[DataMember]
+		public int CodeBarre { get; set; }
+		[DataMember]
+		public string Type { get; set; }
+		[DataMember]
+		public string Theme { get; set; }
+		[DataMember]
+		public string Auteur { get; set; }
+		[DataMember]
+		public string Titre { get; set; }
+		[DataMember]
+		public bool Etat { get; set; }
+		[DataMember]
+		public ArrayList MotCle { get; set; }
+	}
+	[DataContract]
+	public class OuvrageEmprent
+	{
+		[DataMember]
+		public int Numemprent { get; set; }
+		[DataMember]
+		public int CodeBarre { get; set; }
+		[DataMember]
+		public String Id { get; set; }
+		[DataMember]
+		public bool Etat { get; set; }
+		[DataMember]
+		public DateTime DateEmprent { get; set; }
+	}
+}
