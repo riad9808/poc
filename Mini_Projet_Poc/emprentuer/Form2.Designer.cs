@@ -41,7 +41,7 @@
 			// 
 			// validerConexion
 			// 
-			this.validerConexion.Location = new System.Drawing.Point(328, 261);
+			this.validerConexion.Location = new System.Drawing.Point(46, 273);
 			this.validerConexion.Name = "validerConexion";
 			this.validerConexion.Size = new System.Drawing.Size(178, 23);
 			this.validerConexion.TabIndex = 0;
@@ -51,14 +51,14 @@
 			// 
 			// textBox1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(328, 108);
+			this.textBox1.Location = new System.Drawing.Point(46, 120);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(178, 20);
 			this.textBox1.TabIndex = 1;
 			// 
 			// textBox2
 			// 
-			this.textBox2.Location = new System.Drawing.Point(328, 170);
+			this.textBox2.Location = new System.Drawing.Point(46, 182);
 			this.textBox2.Name = "textBox2";
 			this.textBox2.PasswordChar = '*';
 			this.textBox2.Size = new System.Drawing.Size(178, 20);
@@ -67,7 +67,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(325, 81);
+			this.label1.Location = new System.Drawing.Point(43, 93);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(16, 13);
 			this.label1.TabIndex = 3;
@@ -76,7 +76,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(325, 145);
+			this.label2.Location = new System.Drawing.Point(43, 157);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(71, 13);
 			this.label2.TabIndex = 4;
@@ -84,7 +84,7 @@
 			// 
 			// retour
 			// 
-			this.retour.Location = new System.Drawing.Point(328, 28);
+			this.retour.Location = new System.Drawing.Point(12, 12);
 			this.retour.Name = "retour";
 			this.retour.Size = new System.Drawing.Size(75, 23);
 			this.retour.TabIndex = 5;
@@ -95,7 +95,7 @@
 			// etudiant
 			// 
 			this.etudiant.AutoSize = true;
-			this.etudiant.Location = new System.Drawing.Point(328, 57);
+			this.etudiant.Location = new System.Drawing.Point(46, 69);
 			this.etudiant.Name = "etudiant";
 			this.etudiant.Size = new System.Drawing.Size(63, 17);
 			this.etudiant.TabIndex = 6;
@@ -106,7 +106,7 @@
 			// ensignant
 			// 
 			this.ensignant.AutoSize = true;
-			this.ensignant.Location = new System.Drawing.Point(420, 57);
+			this.ensignant.Location = new System.Drawing.Point(138, 69);
 			this.ensignant.Name = "ensignant";
 			this.ensignant.Size = new System.Drawing.Size(77, 17);
 			this.ensignant.TabIndex = 7;
@@ -117,7 +117,7 @@
 			// result
 			// 
 			this.result.AutoSize = true;
-			this.result.Location = new System.Drawing.Point(328, 217);
+			this.result.Location = new System.Drawing.Point(46, 229);
 			this.result.Name = "result";
 			this.result.Size = new System.Drawing.Size(0, 13);
 			this.result.TabIndex = 8;
@@ -126,7 +126,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(293, 342);
 			this.Controls.Add(this.result);
 			this.Controls.Add(this.ensignant);
 			this.Controls.Add(this.etudiant);

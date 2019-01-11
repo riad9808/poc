@@ -39,7 +39,10 @@ namespace bibliothequere
 
 				bool bo = operation.Connexion(b);
 				Console.WriteLine(bo);
-
+				Menu ins = new Menu();
+				ins.Show();
+				this.Hide();
+				/*
 				if (bo)
 				{
 					Menu ins = new Menu();
@@ -51,7 +54,7 @@ namespace bibliothequere
 					
 					result.Text = "erreur ";
 					result.ForeColor = Color.Red;
-				}
+				}*/
 
 			}
 			

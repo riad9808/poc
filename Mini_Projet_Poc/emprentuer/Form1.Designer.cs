@@ -34,7 +34,7 @@
 			// 
 			// conexion
 			// 
-			this.conexion.Location = new System.Drawing.Point(299, 71);
+			this.conexion.Location = new System.Drawing.Point(97, 78);
 			this.conexion.Name = "conexion";
 			this.conexion.Size = new System.Drawing.Size(146, 73);
 			this.conexion.TabIndex = 0;
@@ -44,7 +44,7 @@
 			// 
 			// inscription
 			// 
-			this.inscription.Location = new System.Drawing.Point(299, 179);
+			this.inscription.Location = new System.Drawing.Point(97, 186);
 			this.inscription.Name = "inscription";
 			this.inscription.Size = new System.Drawing.Size(146, 73);
 			this.inscription.TabIndex = 1;
@@ -56,7 +56,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(346, 356);
 			this.Controls.Add(this.inscription);
 			this.Controls.Add(this.conexion);
 			this.Name = "homeForm";

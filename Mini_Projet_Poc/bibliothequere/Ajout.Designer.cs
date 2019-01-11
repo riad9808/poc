@@ -41,6 +41,7 @@
 			this.memoire = new System.Windows.Forms.RadioButton();
 			this.livre = new System.Windows.Forms.RadioButton();
 			this.button1 = new System.Windows.Forms.Button();
+			this.result = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -159,11 +160,20 @@
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
+			// result
+			// 
+			this.result.AutoSize = true;
+			this.result.Location = new System.Drawing.Point(55, 13);
+			this.result.Name = "result";
+			this.result.Size = new System.Drawing.Size(0, 13);
+			this.result.TabIndex = 13;
+			// 
 			// Ajout
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(321, 384);
+			this.Controls.Add(this.result);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.livre);
 			this.Controls.Add(this.memoire);
@@ -199,5 +209,6 @@
 		private System.Windows.Forms.RadioButton memoire;
 		private System.Windows.Forms.RadioButton livre;
 		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Label result;
 	}
 }

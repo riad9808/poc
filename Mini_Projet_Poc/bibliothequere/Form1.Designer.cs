@@ -38,14 +38,14 @@
 			// 
 			// id
 			// 
-			this.id.Location = new System.Drawing.Point(278, 120);
+			this.id.Location = new System.Drawing.Point(98, 99);
 			this.id.Name = "id";
 			this.id.Size = new System.Drawing.Size(162, 20);
 			this.id.TabIndex = 0;
 			// 
 			// pass
 			// 
-			this.pass.Location = new System.Drawing.Point(278, 210);
+			this.pass.Location = new System.Drawing.Point(98, 189);
 			this.pass.Name = "pass";
 			this.pass.PasswordChar = '*';
 			this.pass.Size = new System.Drawing.Size(162, 20);
@@ -53,7 +53,7 @@
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(278, 280);
+			this.button1.Location = new System.Drawing.Point(98, 259);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(162, 23);
 			this.button1.TabIndex = 2;
@@ -64,7 +64,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(337, 104);
+			this.label1.Location = new System.Drawing.Point(157, 83);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(18, 13);
 			this.label1.TabIndex = 3;
@@ -73,7 +73,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(320, 194);
+			this.label2.Location = new System.Drawing.Point(140, 173);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(71, 13);
 			this.label2.TabIndex = 4;
@@ -82,7 +82,7 @@
 			// result
 			// 
 			this.result.AutoSize = true;
-			this.result.Location = new System.Drawing.Point(337, 255);
+			this.result.Location = new System.Drawing.Point(157, 234);
 			this.result.Name = "result";
 			this.result.Size = new System.Drawing.Size(0, 13);
 			this.result.TabIndex = 5;
@@ -91,7 +91,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(338, 358);
 			this.Controls.Add(this.result);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);

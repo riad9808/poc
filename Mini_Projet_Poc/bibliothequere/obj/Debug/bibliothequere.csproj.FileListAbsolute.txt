@@ -9,3 +9,14 @@ E:\informatique\Master 1 GL\Semestre 1\POC\POC\Mini_Projet_Poc\bibliothequere\ob
 E:\informatique\Master 1 GL\Semestre 1\POC\POC\Mini_Projet_Poc\bibliothequere\obj\Debug\bibliothequere.Form1.resources
 E:\informatique\Master 1 GL\Semestre 1\POC\POC\Mini_Projet_Poc\bibliothequere\obj\Debug\bibliothequere.csprojAssemblyReference.cache
 E:\informatique\Master 1 GL\Semestre 1\POC\POC\Mini_Projet_Poc\bibliothequere\obj\Debug\bibliothequere.Menu.resources
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\bibliothequere\bin\Debug\bibliothequere.exe.config
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\bibliothequere\bin\Debug\bibliothequere.exe
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\bibliothequere\bin\Debug\bibliothequere.pdb
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\bibliothequere\obj\Debug\bibliothequere.Ajout.resources
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\bibliothequere\obj\Debug\bibliothequere.Form1.resources
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\bibliothequere\obj\Debug\bibliothequere.Menu.resources
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\bibliothequere\obj\Debug\bibliothequere.Properties.Resources.resources
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\bibliothequere\obj\Debug\bibliothequere.csproj.GenerateResource.cache
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\bibliothequere\obj\Debug\bibliothequere.csproj.CoreCompileInputs.cache
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\bibliothequere\obj\Debug\bibliothequere.exe
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\bibliothequere\obj\Debug\bibliothequere.pdb

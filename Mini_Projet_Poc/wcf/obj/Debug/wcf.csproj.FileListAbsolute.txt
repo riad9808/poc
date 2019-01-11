@@ -7,3 +7,13 @@ E:\informatique\Master 1 GL\Semestre 1\POC\POC\Mini_Projet_Poc\wcf\obj\Debug\wcf
 E:\informatique\Master 1 GL\Semestre 1\POC\POC\Mini_Projet_Poc\wcf\obj\Debug\wcf.csproj.CopyComplete
 E:\informatique\Master 1 GL\Semestre 1\POC\POC\Mini_Projet_Poc\wcf\obj\Debug\wcf.dll
 E:\informatique\Master 1 GL\Semestre 1\POC\POC\Mini_Projet_Poc\wcf\obj\Debug\wcf.pdb
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\wcf\bin\wcf.dll.config
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\wcf\bin\wcf.dll
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\wcf\bin\wcf.pdb
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\wcf\bin\MySql.Data.dll
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\wcf\bin\MySql.Data.xml
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\wcf\obj\Debug\wcf.csproj.CoreCompileInputs.cache
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\wcf\obj\Debug\wcf.csproj.CopyComplete
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\wcf\obj\Debug\wcf.dll
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\wcf\obj\Debug\wcf.pdb
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\wcf\obj\Debug\wcf.csprojAssemblyReference.cache
