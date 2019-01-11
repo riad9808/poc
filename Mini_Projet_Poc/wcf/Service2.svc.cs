@@ -236,8 +236,7 @@ namespace wcf
 			try
 			{
 				connexion.Open();
-				MySqlCommand sql1 = new MySqlCommand("insert into ouvrage values(" + o.CodeBarre + ",'+" + o.Type + "','" + o.Theme + "','" + o.Titre + "','" + o.Auteur + "')", connexion);
-				MySqlDataReader rd1;
+				MySqlCommand sql1 = new MySqlCommand("insert into ouvrage(codebare,type,theme,titre,auteur) values(" + o.CodeBarre + ",'+" + o.Type + "','" + o.Theme + "','" + o.Titre + "','" + o.Auteur + "')", connexion); MySqlDataReader rd1;
 				rd1 = sql1.ExecuteReader();
 				connexion.Close();
 				result = true;
@@ -717,24 +716,18 @@ namespace wcf
 
 
 		public bool RendreEmprent(OuvrageEmprent o)
+
 		{
 			MySqlConnection connexion = new MySqlConnection("database=bibliotheque; server=localhost; user id=root; pwd=1898;");
 			bool res = false;
 			List<OuvrageEmprent> test = ListOuvrageEmprent();
-			List<ListeAttente> lat = ListAttente();
 			int codebare;
 			for (int i = 0; i < test.Count; i++)
 			{
 				if (test[i].Numemprent.Equals(o.Numemprent))
 				{
 					codebare = test[i].CodeBarre;
-					for (int j = 0; j < lat.Count; i++)
-					{
-						if (lat[i].CodeBarre.Equals(test[i].CodeBarre))
-						{
-							/////////////////////////////////////////////////////////////////////////////////////////////
-						}
-					}
+
 
 					try
 					{
@@ -743,22 +736,18 @@ namespace wcf
 						MySqlDataReader rd1;
 						rd1 = sql1.ExecuteReader();
 						connexion.Close();
-						return true;
+						res = true;
 
 					}
 					catch
 					{
 						Console.WriteLine("erreuer");
 					}
+					
 				}
 			}
-
-
-
-
 			return res;
 		}
-
 
 		public void Sanctionner()
 		{

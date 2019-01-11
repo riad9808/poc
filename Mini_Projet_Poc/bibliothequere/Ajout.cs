@@ -56,7 +56,7 @@ namespace bibliothequere
 				if (b)
 				{
 					result.Text = "succes";
-					result.ForeColor = Color.Red;
+					result.ForeColor = Color.Green;
 				}
 				else
 				{

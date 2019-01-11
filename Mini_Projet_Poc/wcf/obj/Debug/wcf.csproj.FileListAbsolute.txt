@@ -16,3 +16,4 @@ C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\wcf\obj\Debug\wcf.csproj.C
 C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\wcf\obj\Debug\wcf.csproj.CopyComplete
 C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\wcf\obj\Debug\wcf.dll
 C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\wcf\obj\Debug\wcf.pdb
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\wcf\obj\Debug\wcf.csprojAssemblyReference.cache
