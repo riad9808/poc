@@ -89,10 +89,11 @@ namespace emprentuer
 			string name = prenom.Text;
 			string iden = id.Text;
 			string pren = nom.Text;
+			string mail = email.Text;
 			string pass = pwd.Text.ToString();
 			string pass2 = pwd2.Text.ToString();
 
-			if(name ==""|| iden == "" || pren == "" || pass == "" || pass2 =="" )
+			if(name ==""|| iden == "" || pren == "" || pass == "" || pass2 =="" || mail == "" )
 			{
 				x = 0;	
 			}
@@ -127,6 +128,8 @@ namespace emprentuer
 							etudiant.Specialite = specialite;
 							etudiant.Niveau = niveau;
 							etudiant.Password = pass;
+							etudiant.Email = mail;
+
 						ChannelFactory<IService1> channelFactory =
 						new ChannelFactory<IService1>("BasicHttpBinding_IService1");
 						IService1 operation = channelFactory.CreateChannel();
@@ -149,6 +152,8 @@ namespace emprentuer
 							ensignant.Matricule = iden;
 							ensignant.Grade = grade;
 							ensignant.Password = pass;
+							ensignant.Email = mail;
+
 						ChannelFactory<IService1> channelFactory =
 						new ChannelFactory<IService1>("BasicHttpBinding_IService1");
 						IService1 operation = channelFactory.CreateChannel();

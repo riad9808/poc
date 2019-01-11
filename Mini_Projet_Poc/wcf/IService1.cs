@@ -12,8 +12,7 @@ namespace wcf
 	[ServiceContract]
 	public interface IService1
 	{
-		[OperationContract]
-		void sanctionner();
+		
 		[OperationContract]
 		bool CreeComptee(Etudiant e);
 		[OperationContract]
@@ -32,38 +31,21 @@ namespace wcf
 		bool Reserver(OuvrageEmprent o);
 		[OperationContract]
 		bool InscrireAttente(ListeAttente l);
-		
+		[OperationContract]
+		void Sanctionner();
+
 
 		// TODO: ajoutez vos opérations de service ici
 	}
-	/*
-	[ServiceContract]
-	public interface IService2
-	{
-		[OperationContract]
-		bool AjouterOuvrage(Ouvrage o);
-		[OperationContract]
-		bool ConfirmerEmprent(OuvrageEmprent e);
-		[OperationContract]
-		List<Ouvrage> Consulter();
-		[OperationContract]
-		bool Connexion(Bibliothequer b);
-		[OperationContract]
-		bool ConfirmerCompte(Ensignant e);
-		[OperationContract]
-		bool ConfirmerCompte(Etudiant e);
-		[OperationContract]
-		bool RendreEmprent(OuvrageEmprent o);
-
-	}*/
+	
+	
 	// Utilisez un contrat de données comme indiqué dans l'exemple ci-après pour ajouter les types composites aux opérations de service.
 	// Vous pouvez ajouter des fichiers XSD au projet. Une fois le projet généré, vous pouvez utiliser directement les types de données qui y sont définis, avec l'espace de noms "serverwcf.ContractType".
 	[DataContract]
 	public class Ensignant
 	{
 
-
-		public int nbNonReserve;
+		
 		[DataMember]
 		public string Matricule { get; set; }
 		[DataMember]
@@ -82,18 +64,11 @@ namespace wcf
 		public bool EtatCompte { get; set; }
 		[DataMember]
 		public int NbNonReserve { get; set; }
+		[DataMember]
+		public string Email { get; set; }
 	}
 
-	[DataContract]
-	public class Bibliothequer
-	{
-
-		[DataMember]
-		public string Password { get; set; }
-
-		[DataMember]
-		public string Id { get; set; }
-	}
+	
 	[DataContract]
 	public class Etudiant
 	{
@@ -117,6 +92,8 @@ namespace wcf
 		public bool EtatSanction { get; set; }
 		[DataMember]
 		public DateTime Sanction { get; set; }
+		[DataMember]
+		public string Email { get; set; }
 	}
 	[DataContract]
 	public class ListeAttente

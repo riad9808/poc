@@ -288,7 +288,7 @@ namespace wcf
 		}
 
 
-		public bool ConfirmerCompte(Etudiant e)
+		public bool ConfirmerComptee(Etudiant e)
 		{
 			MySqlConnection connexion = new MySqlConnection("database=bibliotheque; server=localhost; user id=root; pwd=1898;");
 			bool res = false;
@@ -756,7 +756,7 @@ namespace wcf
 		}
 
 
-		public void sanctionner()
+		public void Sanctionner()
 		{
 			MySqlConnection connexion = new MySqlConnection("database=bibliotheque; server=localhost; user id=root; pwd=1898;");
 

@@ -60,6 +60,8 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.result = new System.Windows.Forms.Label();
 			this.retour = new System.Windows.Forms.Button();
+			this.label6 = new System.Windows.Forms.Label();
+			this.email = new System.Windows.Forms.TextBox();
 			this.groupBox1.SuspendLayout();
 			this.niveau.SuspendLayout();
 			this.grade.SuspendLayout();
@@ -391,11 +393,29 @@
 			this.retour.UseVisualStyleBackColor = true;
 			this.retour.Click += new System.EventHandler(this.retour_Click);
 			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Location = new System.Drawing.Point(461, 313);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(31, 13);
+			this.label6.TabIndex = 26;
+			this.label6.Text = "email";
+			// 
+			// email
+			// 
+			this.email.Location = new System.Drawing.Point(464, 328);
+			this.email.Name = "email";
+			this.email.Size = new System.Drawing.Size(100, 20);
+			this.email.TabIndex = 27;
+			// 
 			// inscription
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.email);
+			this.Controls.Add(this.label6);
 			this.Controls.Add(this.retour);
 			this.Controls.Add(this.result);
 			this.Controls.Add(this.button1);
@@ -462,5 +482,7 @@
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Label result;
 		private System.Windows.Forms.Button retour;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.TextBox email;
 	}
 }

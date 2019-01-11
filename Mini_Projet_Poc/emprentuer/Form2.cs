@@ -70,7 +70,7 @@ namespace emprentuer
 						ChannelFactory<IService1> channelFactory =
 						new ChannelFactory<IService1>("BasicHttpBinding_IService1");
 						IService1 operation = channelFactory.CreateChannel();
-						operation.sanctionner();
+						operation.Sanctionner();
 						b = operation.Connexionn(etudiantt);
 
 					}
@@ -89,7 +89,7 @@ namespace emprentuer
 						ChannelFactory<IService1> channelFactory =
 					new ChannelFactory<IService1>("BasicHttpBinding_IService1");
 						IService1 operation = channelFactory.CreateChannel();
-						operation.sanctionner();
+						operation.Sanctionner();
 						b = operation.Connexion(ensi);
 
 					}

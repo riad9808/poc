@@ -10,6 +10,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "emprentuer", "emprentuer\em
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wcf", "wcf\wcf.csproj", "{78A2F001-EC40-4173-A49D-8F6A704A2AA6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bibliothequere", "bibliothequere\bibliothequere.csproj", "{5CABA718-2620-4A8A-A831-A32E07EAE16C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{78A2F001-EC40-4173-A49D-8F6A704A2AA6} = {78A2F001-EC40-4173-A49D-8F6A704A2AA6}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{5CEA9B35-D120-4163-8BBF-C6B45961CACB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +31,14 @@ Global
 		{78A2F001-EC40-4173-A49D-8F6A704A2AA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78A2F001-EC40-4173-A49D-8F6A704A2AA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78A2F001-EC40-4173-A49D-8F6A704A2AA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CABA718-2620-4A8A-A831-A32E07EAE16C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CABA718-2620-4A8A-A831-A32E07EAE16C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CABA718-2620-4A8A-A831-A32E07EAE16C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CABA718-2620-4A8A-A831-A32E07EAE16C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CEA9B35-D120-4163-8BBF-C6B45961CACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CEA9B35-D120-4163-8BBF-C6B45961CACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CEA9B35-D120-4163-8BBF-C6B45961CACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CEA9B35-D120-4163-8BBF-C6B45961CACB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

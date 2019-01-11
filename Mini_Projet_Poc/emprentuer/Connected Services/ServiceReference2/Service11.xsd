@@ -125,4 +125,14 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Sanctionner">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SanctionnerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

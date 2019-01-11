@@ -62,6 +62,12 @@
   <wsdl:message name="IService1_InscrireAttente_OutputMessage">
     <wsdl:part name="parameters" element="tns:InscrireAttenteResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_Sanctionner_InputMessage">
+    <wsdl:part name="parameters" element="tns:Sanctionner" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Sanctionner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SanctionnerResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="CreeComptee">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreeComptee" message="tns:IService1_CreeComptee_InputMessage" />
@@ -98,6 +104,10 @@
     <wsdl:operation name="InscrireAttente">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InscrireAttente" message="tns:IService1_InscrireAttente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/InscrireAttenteResponse" message="tns:IService1_InscrireAttente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Sanctionner">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Sanctionner" message="tns:IService1_Sanctionner_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SanctionnerResponse" message="tns:IService1_Sanctionner_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -176,6 +186,15 @@
     </wsdl:operation>
     <wsdl:operation name="InscrireAttente">
       <soap:operation soapAction="http://tempuri.org/IService1/InscrireAttente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sanctionner">
+      <soap:operation soapAction="http://tempuri.org/IService1/Sanctionner" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

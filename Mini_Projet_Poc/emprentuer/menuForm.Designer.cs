@@ -73,6 +73,7 @@ namespace emprentuer
 			this.pass1.Name = "pass1";
 			this.pass1.Size = new System.Drawing.Size(100, 20);
 			this.pass1.TabIndex = 2;
+			this.pass1.PasswordChar = '*';
 			// 
 			// groupBox1
 			// 
@@ -112,6 +113,8 @@ namespace emprentuer
 			this.pass2.Name = "pass2";
 			this.pass2.Size = new System.Drawing.Size(100, 20);
 			this.pass2.TabIndex = 3;
+			this.pass2.PasswordChar = '*';
+
 			// 
 			// logout
 			// 

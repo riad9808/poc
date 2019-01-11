@@ -23,6 +23,9 @@ namespace emprentuer.ServiceReference2 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool EtatCompteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -59,6 +62,19 @@ namespace emprentuer.ServiceReference2 {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
             }
         }
         
@@ -212,6 +228,9 @@ namespace emprentuer.ServiceReference2 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool EtatCompteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -245,6 +264,19 @@ namespace emprentuer.ServiceReference2 {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
             }
         }
         
@@ -765,8 +797,13 @@ namespace emprentuer.ServiceReference2 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InscrireAttente", ReplyAction="http://tempuri.org/IService1/InscrireAttenteResponse")]
         System.Threading.Tasks.Task<bool> InscrireAttenteAsync(emprentuer.ServiceReference2.ListeAttente l);
-		void sanctionner();
-	}
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Sanctionner", ReplyAction="http://tempuri.org/IService1/SanctionnerResponse")]
+        void Sanctionner();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Sanctionner", ReplyAction="http://tempuri.org/IService1/SanctionnerResponse")]
+        System.Threading.Tasks.Task SanctionnerAsync();
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IService1Channel : emprentuer.ServiceReference2.IService1, System.ServiceModel.IClientChannel {
@@ -865,6 +902,14 @@ namespace emprentuer.ServiceReference2 {
         
         public System.Threading.Tasks.Task<bool> InscrireAttenteAsync(emprentuer.ServiceReference2.ListeAttente l) {
             return base.Channel.InscrireAttenteAsync(l);
+        }
+        
+        public void Sanctionner() {
+            base.Channel.Sanctionner();
+        }
+        
+        public System.Threading.Tasks.Task SanctionnerAsync() {
+            return base.Channel.SanctionnerAsync();
         }
     }
 }
