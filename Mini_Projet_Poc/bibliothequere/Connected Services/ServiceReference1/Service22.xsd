@@ -97,4 +97,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ListBibliothequeur">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListBibliothequeurResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/wcf" minOccurs="0" name="ListBibliothequeurResult" nillable="true" type="q8:ArrayOfBibliothequer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

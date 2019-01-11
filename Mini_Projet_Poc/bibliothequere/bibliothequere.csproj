@@ -91,6 +91,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Connected Services\ServiceReference1\bibliothequere.ServiceReference1.Bibliothequer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\bibliothequere.ServiceReference1.Ouvrage.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

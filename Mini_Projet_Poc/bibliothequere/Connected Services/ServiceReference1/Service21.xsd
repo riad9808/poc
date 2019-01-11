@@ -38,6 +38,7 @@
   <xs:element name="Bibliothequer" nillable="true" type="tns:Bibliothequer" />
   <xs:complexType name="Ensignant">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="EtatCompte" type="xs:boolean" />
       <xs:element minOccurs="0" name="EtatSanction" type="xs:boolean" />
       <xs:element minOccurs="0" name="Grade" nillable="true" type="xs:string" />
@@ -52,6 +53,7 @@
   <xs:element name="Ensignant" nillable="true" type="tns:Ensignant" />
   <xs:complexType name="Etudiant">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="EtatCompte" type="xs:boolean" />
       <xs:element minOccurs="0" name="EtatSanction" type="xs:boolean" />
       <xs:element minOccurs="0" name="NbNonReserve" type="xs:int" />
@@ -65,4 +67,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Etudiant" nillable="true" type="tns:Etudiant" />
+  <xs:complexType name="ArrayOfBibliothequer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Bibliothequer" nillable="true" type="tns:Bibliothequer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBibliothequer" nillable="true" type="tns:ArrayOfBibliothequer" />
 </xs:schema>

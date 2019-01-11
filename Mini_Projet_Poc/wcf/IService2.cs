@@ -25,6 +25,8 @@ namespace wcf
 		bool ConfirmerComptee(Etudiant e);
 		[OperationContract]
 		bool RendreEmprent(OuvrageEmprent o);
+		[OperationContract]
+		List<Bibliothequer> ListBibliothequeur();
 
 	}
 

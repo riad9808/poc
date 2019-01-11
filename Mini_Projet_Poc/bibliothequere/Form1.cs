@@ -23,6 +23,7 @@ namespace bibliothequere
 		{
 			string i = id.Text;
 			string pwd = pass.Text.ToString();
+
 			if (i == "" || pwd == "")
 			{
 				result.Text = "remplissez tous le formulaire ";
@@ -36,13 +37,12 @@ namespace bibliothequere
 				Bibliothequer b = new Bibliothequer();
 				b.Id = i;
 				b.Password = pwd;
-
+				
 				bool bo = operation.Connexion(b);
-				Console.WriteLine(bo);
-				Menu ins = new Menu();
-				ins.Show();
-				this.Hide();
-				/*
+				Console.WriteLine(b.Id);
+				Console.WriteLine(b.Password);
+
+
 				if (bo)
 				{
 					Menu ins = new Menu();
@@ -54,7 +54,7 @@ namespace bibliothequere
 					
 					result.Text = "erreur ";
 					result.ForeColor = Color.Red;
-				}*/
+				}
 
 			}
 			

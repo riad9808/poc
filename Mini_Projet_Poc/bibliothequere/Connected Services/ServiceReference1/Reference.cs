@@ -22,6 +22,7 @@ namespace bibliothequere.ServiceReference1 {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bibliothequere.ServiceReference1.Bibliothequer))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bibliothequere.ServiceReference1.Ensignant))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(bibliothequere.ServiceReference1.Etudiant))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<bibliothequere.ServiceReference1.Bibliothequer>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<object>))]
     public partial class Ouvrage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -340,6 +341,9 @@ namespace bibliothequere.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool EtatCompteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -373,6 +377,19 @@ namespace bibliothequere.ServiceReference1 {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
             }
         }
         
@@ -513,6 +530,9 @@ namespace bibliothequere.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool EtatCompteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -549,6 +569,19 @@ namespace bibliothequere.ServiceReference1 {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
             }
         }
         
@@ -737,6 +770,12 @@ namespace bibliothequere.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/RendreEmprent", ReplyAction="http://tempuri.org/IService2/RendreEmprentResponse")]
         System.Threading.Tasks.Task<bool> RendreEmprentAsync(bibliothequere.ServiceReference1.OuvrageEmprent o);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/ListBibliothequeur", ReplyAction="http://tempuri.org/IService2/ListBibliothequeurResponse")]
+        System.Collections.Generic.List<bibliothequere.ServiceReference1.Bibliothequer> ListBibliothequeur();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/ListBibliothequeur", ReplyAction="http://tempuri.org/IService2/ListBibliothequeurResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<bibliothequere.ServiceReference1.Bibliothequer>> ListBibliothequeurAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -820,6 +859,14 @@ namespace bibliothequere.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> RendreEmprentAsync(bibliothequere.ServiceReference1.OuvrageEmprent o) {
             return base.Channel.RendreEmprentAsync(o);
+        }
+        
+        public System.Collections.Generic.List<bibliothequere.ServiceReference1.Bibliothequer> ListBibliothequeur() {
+            return base.Channel.ListBibliothequeur();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<bibliothequere.ServiceReference1.Bibliothequer>> ListBibliothequeurAsync() {
+            return base.Channel.ListBibliothequeurAsync();
         }
     }
 }

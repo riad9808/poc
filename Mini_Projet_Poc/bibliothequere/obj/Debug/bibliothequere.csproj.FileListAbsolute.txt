@@ -20,3 +20,4 @@ C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\bibliothequere\obj\Debug\b
 C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\bibliothequere\obj\Debug\bibliothequere.csproj.CoreCompileInputs.cache
 C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\bibliothequere\obj\Debug\bibliothequere.exe
 C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\bibliothequere\obj\Debug\bibliothequere.pdb
+C:\Users\RIAD\Documents\GitHub\myRepo\Mini_Projet_Poc\bibliothequere\obj\Debug\bibliothequere.csprojAssemblyReference.cache

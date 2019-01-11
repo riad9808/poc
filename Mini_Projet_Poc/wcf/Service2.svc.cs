@@ -104,7 +104,7 @@ namespace wcf
 				{
 					Bibliothequer b = new Bibliothequer();
 					b.Id = rd["id"].ToString();
-					b.Id = rd["password"].ToString();
+					b.Password = rd["password"].ToString();
 
 					bibliothequeur.Add(b);
 				}
@@ -412,6 +412,7 @@ namespace wcf
 			Console.WriteLine("access");
 			bool res = false;
 			List<Bibliothequer> test = ListBibliothequeur();
+			
 			for (int i = 0; i < test.Count; i++)
 			{
 				if (test[i].Id.Equals(b.Id))
