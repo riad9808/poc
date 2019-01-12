@@ -36,7 +36,7 @@ namespace wcf
 					e.NbNonReserve = int.Parse(rd["nonConfirme"].ToString());
 					e.Specialite = rd["specialite"].ToString();
 					e.Niveau = rd["niveau"].ToString();
-
+					e.Email = rd["email"].ToString();
 					etudiant.Add(e);
 				}
 				connexion.Close();
@@ -74,7 +74,7 @@ namespace wcf
 					e.EtatCompte = Convert.ToBoolean(rd["etatcompte"]);
 					e.NbNonReserve = int.Parse(rd["nonConfirme"].ToString());
 					e.Grade = rd["grade"].ToString();
-
+					e.Email = rd["email"].ToString();
 					ensignant.Add(e);
 				}
 				connexion.Close();
@@ -351,60 +351,8 @@ namespace wcf
 
 
 
-		public bool Connexionn(Etudiant e)
-		{
-			bool res = false;
-			List<Etudiant> test = ListEtudiant();
-			for (int i = 0; i < test.Count; i++)
-			{
-				if (test[i].NumCarte.Equals(e.NumCarte))
-				{
-					if (test[i].Password.Equals(e.Password))
-					{
-
-						if (test[i].EtatCompte == false)
-						{
-							return false;
-						}
-						else
-						{
-							return true;
-						}
-
-					}
-					else
-					{
-						return false;
-					}
-				}
-			}
-
-
-			return false;
-		}
-
-		public bool Connexion(Ensignant e)
-		{
-			bool res = false;
-			List<Ensignant> test = ListEnsignant();
-			for (int i = 0; i < test.Count; i++)
-			{
-				if (test[i].Matricule.Equals(e.Matricule))
-				{
-					if (test[i].Password.Equals(e.Password))
-					{
-						return true;
-					}
-					else
-					{
-						return false;
-					}
-				}
-			}
-
-
-			return res;
-		}
+		
+		
 
 		public bool Connexion(Bibliothequer b)
 		{
@@ -438,169 +386,10 @@ namespace wcf
 			return ouvrages;
 		}
 
-		public List<Ouvrage> Recherche(Ouvrage o)
-		{
-			List<Ouvrage> ouvrages = ListOuvrage();
-
-			List<Ouvrage> resultat = new List<Ouvrage>();
-			if (o.Titre == null && o.Type == null && o.Theme == null && o.Auteur == null)
-			{
-				resultat = ouvrages;
-			}
-			if (o.Type != null)
-			{
-				for (int i = 0; i < ouvrages.Count; i++)
-				{
-					if (ouvrages[i].Type.Equals(o.Type))
-					{
-						resultat.Add(ouvrages[i]);
-					}
-
-				}
-			}
-			if (o.Auteur != null)
-			{
-				for (int i = 0; i < ouvrages.Count; i++)
-				{
-					if (ouvrages[i].Auteur.Equals(o.Auteur))
-					{
-						resultat.Add(ouvrages[i]);
-					}
-
-				}
-			}
-			if (o.Theme != null)
-			{
-				for (int i = 0; i < ouvrages.Count; i++)
-				{
-					if (ouvrages[i].Theme.Equals(o.Theme))
-					{
-						resultat.Add(ouvrages[i]);
-					}
-
-				}
-			}
-			if (o.Titre != null)
-			{
-				for (int i = 0; i < ouvrages.Count; i++)
-				{
-					if (ouvrages[i].Titre.Equals(o.Titre))
-					{
-						resultat.Add(ouvrages[i]);
-					}
-
-				}
-			}
-			return resultat;
-		}
+		
 
 
-
-		public bool CreeComptee(Etudiant e)
-		{
-			MySqlConnection connexion = new MySqlConnection("database=bibliotheque; server=localhost; user id=root; pwd=1898;");
-
-			bool res = false;
-			List<Etudiant> test = ListEtudiant();
-			for (int i = 0; i < test.Count; i++)
-			{
-				if (test[i].NumCarte.Equals(e.NumCarte))
-				{
-					return false;
-				}
-			}
-			try
-			{
-				connexion.Open();
-				MySqlCommand sql1 = new MySqlCommand("insert into emprenteur (matricule,type,nom,prenom,password,specialite,niveau,sanction) values('" + e.NumCarte + "','etudiant','" + e.Nom + "','" + e.Prenom + "','" + e.Password + "','" + e.Specialite + "','" + e.Niveau + "','0000-00-00')", connexion);
-				MySqlDataReader rd1;
-				rd1 = sql1.ExecuteReader();
-				connexion.Close();
-				res = true;
-
-			}
-			catch
-			{
-				Console.WriteLine("erreuer");
-			}
-
-
-			return res;
-		}
-
-
-
-
-
-
-		public bool CreeCompte(Ensignant e)
-		{
-			MySqlConnection connexion = new MySqlConnection("database=bibliotheque; server=localhost; user id=root; pwd=1898;");
-
-			bool res = false;
-			List<Ensignant> test = ListEnsignant();
-			for (int i = 0; i < test.Count; i++)
-			{
-				if (test[i].Matricule.Equals(e.Matricule))
-				{
-					return false;
-				}
-			}
-			DateTime d = DateTime.Now;
-			try
-			{
-				connexion.Open();
-				MySqlCommand sql1 = new MySqlCommand("insert into emprenteur (matricule,type,nom,prenom,password,grade,sanction) values('" + e.Matricule + "','ensignant','" + e.Nom + "','" + e.Prenom + "','" + e.Password + "','" + e.Grade + "','" + d.Year + "-" + d.Month + "-" + d.Day + "')", connexion);
-				MySqlDataReader rd1;
-				rd1 = sql1.ExecuteReader();
-				connexion.Close();
-				res = true;
-
-			}
-			catch
-			{
-				Console.WriteLine("erreuer");
-			}
-
-
-			return res;
-		}
-
-
-
-
-		public bool ModifierMotPass(Etudiant e)
-		{
-			MySqlConnection connexion = new MySqlConnection("database=bibliotheque; server=localhost; user id=root; pwd=1898;");
-			bool res = false;
-			List<Etudiant> test = ListEtudiant();
-			for (int i = 0; i < test.Count; i++)
-			{
-				if ((test[i].NumCarte.Equals(e.NumCarte)))
-				{
-					res = true;
-				}
-			}
-			if (res == false)
-			{
-				return false;
-			}
-			try
-			{
-				connexion.Open();
-				MySqlCommand sql1 = new MySqlCommand("update emprenteur set password='" + e.Password + "' where matricule='" + e.NumCarte + "'  ", connexion);
-				MySqlDataReader rd1;
-				rd1 = sql1.ExecuteReader();
-				connexion.Close();
-				return true;
-
-			}
-			catch
-			{
-				Console.WriteLine("erreuer");
-			}
-			return res;
-		}
+		
 
 		public bool InscrireAttente(ListeAttente l)
 		{
@@ -636,80 +425,7 @@ namespace wcf
 			return res;
 		}
 
-		public bool Reserver(OuvrageEmprent o)
-		{
-			MySqlConnection connexion = new MySqlConnection("database=bibliotheque; server=localhost; user id=root; pwd=1898;");
-
-			bool res = false;
-			List<Ouvrage> ouvrage = ListOuvrage();
-			List<Etudiant> etudian = ListEtudiant();
-			List<Ensignant> ens = ListEnsignant();
-			for (int i = 0; i < etudian.Count; i++)
-			{
-				if (etudian[i].NumCarte.Equals(o.Id))
-				{
-					if ((etudian[i].EtatCompte == false) || (etudian[i].EtatSanction == true))
-					{
-						return false;
-					}
-				}
-			}
-			for (int i = 0; i < ens.Count; i++)
-			{
-				if (ens[i].Matricule.Equals(o.Id))
-				{
-					if ((ens[i].EtatCompte == false) || (ens[i].EtatSanction == true))
-					{
-						return false;
-					}
-				}
-			}
-			for (int i = 0; i < ouvrage.Count; i++)
-			{
-				if (ouvrage[i].CodeBarre.Equals(o.CodeBarre))
-				{
-					if (ouvrage[i].Etat == true)
-					{
-						ListeAttente l = new ListeAttente();
-						l.CodeBarre = o.CodeBarre;
-						l.Id = o.Id;
-						InscrireAttente(l);
-						return false;
-					}
-				}
-			}
-			try
-			{
-				connexion.Open();
-				DateTime d = DateTime.Now;
-				MySqlCommand sql1 = new MySqlCommand("insert into ouvrageemprent (codebare,id,date) values('" + o.CodeBarre + "','" + o.Id + "','" + d.Year + "-" + d.Month + "-" + d.Day + "')", connexion);
-				MySqlDataReader rd1;
-				rd1 = sql1.ExecuteReader();
-				connexion.Close();
-				res = true;
-
-			}
-			catch
-			{
-				Console.WriteLine("erreuer");
-			}
-			try
-			{
-				connexion.Open();
-				MySqlCommand sql1 = new MySqlCommand("update ouvrage set etat=1 where codebare='" + o.CodeBarre + "'", connexion);
-				MySqlDataReader rd1;
-				rd1 = sql1.ExecuteReader();
-				connexion.Close();
-				res = true;
-
-			}
-			catch
-			{
-				Console.WriteLine("erreuer");
-			}
-			return res;
-		}
-
+		
 
 
 
@@ -749,179 +465,7 @@ namespace wcf
 			return res;
 		}
 
-		public void Sanctionner()
-		{
-			MySqlConnection connexion = new MySqlConnection("database=bibliotheque; server=localhost; user id=root; pwd=1898;");
-
-			List<OuvrageEmprent> ouvemp = ListOuvrageEmprent();
-			List<Etudiant> etudiant = ListEtudiant();
-			List<Ensignant> ensignant = ListEnsignant();
-			List<ListeAttente> attente = ListAttente();
-			DateTimeOffset d = DateTimeOffset.Now;
-
-			for (int i = 0; i < ouvemp.Count; i++)
-			{
-				if (ouvemp[i].Etat == false)
-				{
-					TimeSpan t = d - ouvemp[i].DateEmprent;
-					if (t.Days > 1)
-					{
-						for (int j = 0; j < etudiant.Count; j++)
-						{
-							if (ouvemp[i].Id.Equals(etudiant[j].NumCarte))
-							{
-								if (etudiant[j].NbNonReserve == 2)
-								{
-									d = d.AddDays(30);
-									try
-									{
-										connexion.Open();
-										MySqlCommand sql1 = new MySqlCommand("update emprenteur set etatsanction=1,sanction='" + d.Year + "-" + d.Month + "-" + d.Day + "' where matricule='" + etudiant[j].NumCarte + "'  ", connexion);
-										MySqlDataReader rd1;
-										rd1 = sql1.ExecuteReader();
-										connexion.Close();
-
-
-									}
-									catch
-									{
-										Console.WriteLine("erreuer");
-									}
-								}
-								else
-								{
-									try
-									{
-										connexion.Open();
-										MySqlCommand sql1 = new MySqlCommand("update emprenteur set nonConfirme=" + etudiant[j].NbNonReserve + 1 + " where matricule='" + etudiant[j].NumCarte + "'  ", connexion);
-										MySqlDataReader rd1;
-										rd1 = sql1.ExecuteReader();
-										connexion.Close();
-
-
-									}
-									catch
-									{
-										Console.WriteLine("erreuer");
-									}
-								}
-							}
-						}
-
-
-						for (int h = 0; h < ensignant.Count; h++)
-						{
-							if (ouvemp[i].Id.Equals(ensignant[h].Matricule))
-							{
-								if (ensignant[h].NbNonReserve == 2)
-								{
-									d = d.AddDays(30);
-									try
-									{
-										connexion.Open();
-										MySqlCommand sql1 = new MySqlCommand("update emprenteur set nonConfirme=0,etatsanction=1,sanction='" + d.Year + "-" + d.Month + "-" + d.Day + "' where matricule='" + ensignant[h].Matricule + "'  ", connexion);
-										MySqlDataReader rd1;
-										rd1 = sql1.ExecuteReader();
-										connexion.Close();
-
-
-									}
-									catch
-									{
-										Console.WriteLine("erreuer");
-									}
-								}
-								else
-								{
-									try
-									{
-										connexion.Open();
-										MySqlCommand sql1 = new MySqlCommand("update emprenteur set nonConfirme=" + ensignant[h].NbNonReserve + 1 + " where matricule='" + ensignant[h].Matricule + "'  ", connexion);
-										MySqlDataReader rd1;
-										rd1 = sql1.ExecuteReader();
-										connexion.Close();
-
-
-									}
-									catch
-									{
-										Console.WriteLine("erreuer");
-									}
-								}
-							}
-						}
-
-						int vartest = 0;
-						for (int m = 0; m < attente.Count; m++)
-						{
-							if (attente[m].CodeBarre.Equals(ouvemp[i].CodeBarre) && vartest == 0)
-							{
-								ListeAttente aajouter = attente[m];
-								for (int n = 0; n < attente.Count; n++)
-								{
-									if (aajouter.CodeBarre.Equals(attente[n].CodeBarre) && aajouter.Priorite < attente[n].Priorite)
-									{
-										aajouter = attente[n];
-									}
-
-								}
-								vartest = 1;
-								OuvrageEmprent e = new OuvrageEmprent();
-								e.CodeBarre = aajouter.CodeBarre;
-								e.Id = aajouter.Id;
-								Reserver(e);
-								try
-								{
-									connexion.Open();
-									MySqlCommand sql1 = new MySqlCommand("delete from listeattente where codebare=" + aajouter.CodeBarre + "and priorite=" + aajouter.Priorite + " ", connexion);
-									MySqlDataReader rd1;
-									rd1 = sql1.ExecuteReader();
-									connexion.Close();
-
-
-								}
-								catch
-								{
-									Console.WriteLine("erreuer");
-								}
-							}
-						}
-						if (vartest == 0)
-						{
-							try
-							{
-								connexion.Open();
-								MySqlCommand sql1 = new MySqlCommand("update ouvrage set etat=0 where codebarre=" + ouvemp[i].CodeBarre + " ", connexion);
-								MySqlDataReader rd1;
-								rd1 = sql1.ExecuteReader();
-								connexion.Close();
-
-
-							}
-							catch
-							{
-								Console.WriteLine("erreuer");
-							}
-						}
-						try
-						{
-							connexion.Open();
-							MySqlCommand sql1 = new MySqlCommand("delete from ouvrageemprent where numemprent=" + ouvemp[i].Numemprent + " ", connexion);
-							MySqlDataReader rd1;
-							rd1 = sql1.ExecuteReader();
-							connexion.Close();
-
-
-						}
-						catch
-						{
-							Console.WriteLine("erreuer");
-						}
-
-					}
-				}
-			}
-		}
+		
 
 	}
 }
