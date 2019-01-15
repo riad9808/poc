@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace emprentuer.ServiceReference2 {
+namespace emprentuer.ServiceReference1 {
     using System.Runtime.Serialization;
     using System;
     
@@ -411,11 +411,11 @@ namespace emprentuer.ServiceReference2 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Ouvrage", Namespace="http://schemas.datacontract.org/2004/07/wcf")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(emprentuer.ServiceReference2.Etudiant))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(emprentuer.ServiceReference2.Ensignant))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<emprentuer.ServiceReference2.Ouvrage>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(emprentuer.ServiceReference2.OuvrageEmprent))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(emprentuer.ServiceReference2.ListeAttente))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(emprentuer.ServiceReference1.Etudiant))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(emprentuer.ServiceReference1.Ensignant))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<emprentuer.ServiceReference1.Ouvrage>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(emprentuer.ServiceReference1.OuvrageEmprent))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(emprentuer.ServiceReference1.ListeAttente))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<object>))]
     public partial class Ouvrage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -741,62 +741,62 @@ namespace emprentuer.ServiceReference2 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference2.IService1")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreeComptee", ReplyAction="http://tempuri.org/IService1/CreeCompteeResponse")]
-        bool CreeComptee(emprentuer.ServiceReference2.Etudiant e);
+        bool CreeComptee(emprentuer.ServiceReference1.Etudiant e);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreeComptee", ReplyAction="http://tempuri.org/IService1/CreeCompteeResponse")]
-        System.Threading.Tasks.Task<bool> CreeCompteeAsync(emprentuer.ServiceReference2.Etudiant e);
+        System.Threading.Tasks.Task<bool> CreeCompteeAsync(emprentuer.ServiceReference1.Etudiant e);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreeCompte", ReplyAction="http://tempuri.org/IService1/CreeCompteResponse")]
-        bool CreeCompte(emprentuer.ServiceReference2.Ensignant e);
+        bool CreeCompte(emprentuer.ServiceReference1.Ensignant e);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreeCompte", ReplyAction="http://tempuri.org/IService1/CreeCompteResponse")]
-        System.Threading.Tasks.Task<bool> CreeCompteAsync(emprentuer.ServiceReference2.Ensignant e);
+        System.Threading.Tasks.Task<bool> CreeCompteAsync(emprentuer.ServiceReference1.Ensignant e);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Consulter", ReplyAction="http://tempuri.org/IService1/ConsulterResponse")]
-        System.Collections.Generic.List<emprentuer.ServiceReference2.Ouvrage> Consulter();
+        System.Collections.Generic.List<emprentuer.ServiceReference1.Ouvrage> Consulter();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Consulter", ReplyAction="http://tempuri.org/IService1/ConsulterResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<emprentuer.ServiceReference2.Ouvrage>> ConsulterAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<emprentuer.ServiceReference1.Ouvrage>> ConsulterAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Recherche", ReplyAction="http://tempuri.org/IService1/RechercheResponse")]
-        System.Collections.Generic.List<emprentuer.ServiceReference2.Ouvrage> Recherche(emprentuer.ServiceReference2.Ouvrage o);
+        System.Collections.Generic.List<emprentuer.ServiceReference1.Ouvrage> Recherche(emprentuer.ServiceReference1.Ouvrage o);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Recherche", ReplyAction="http://tempuri.org/IService1/RechercheResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<emprentuer.ServiceReference2.Ouvrage>> RechercheAsync(emprentuer.ServiceReference2.Ouvrage o);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<emprentuer.ServiceReference1.Ouvrage>> RechercheAsync(emprentuer.ServiceReference1.Ouvrage o);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Connexionn", ReplyAction="http://tempuri.org/IService1/ConnexionnResponse")]
-        bool Connexionn(emprentuer.ServiceReference2.Etudiant e);
+        bool Connexionn(emprentuer.ServiceReference1.Etudiant e);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Connexionn", ReplyAction="http://tempuri.org/IService1/ConnexionnResponse")]
-        System.Threading.Tasks.Task<bool> ConnexionnAsync(emprentuer.ServiceReference2.Etudiant e);
+        System.Threading.Tasks.Task<bool> ConnexionnAsync(emprentuer.ServiceReference1.Etudiant e);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Connexion", ReplyAction="http://tempuri.org/IService1/ConnexionResponse")]
-        bool Connexion(emprentuer.ServiceReference2.Ensignant e);
+        bool Connexion(emprentuer.ServiceReference1.Ensignant e);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Connexion", ReplyAction="http://tempuri.org/IService1/ConnexionResponse")]
-        System.Threading.Tasks.Task<bool> ConnexionAsync(emprentuer.ServiceReference2.Ensignant e);
+        System.Threading.Tasks.Task<bool> ConnexionAsync(emprentuer.ServiceReference1.Ensignant e);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ModifierMotPass", ReplyAction="http://tempuri.org/IService1/ModifierMotPassResponse")]
-        bool ModifierMotPass(emprentuer.ServiceReference2.Etudiant e);
+        bool ModifierMotPass(emprentuer.ServiceReference1.Etudiant e);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ModifierMotPass", ReplyAction="http://tempuri.org/IService1/ModifierMotPassResponse")]
-        System.Threading.Tasks.Task<bool> ModifierMotPassAsync(emprentuer.ServiceReference2.Etudiant e);
+        System.Threading.Tasks.Task<bool> ModifierMotPassAsync(emprentuer.ServiceReference1.Etudiant e);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Reserver", ReplyAction="http://tempuri.org/IService1/ReserverResponse")]
-        bool Reserver(emprentuer.ServiceReference2.OuvrageEmprent o);
+        int Reserver(emprentuer.ServiceReference1.OuvrageEmprent o);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Reserver", ReplyAction="http://tempuri.org/IService1/ReserverResponse")]
-        System.Threading.Tasks.Task<bool> ReserverAsync(emprentuer.ServiceReference2.OuvrageEmprent o);
+        System.Threading.Tasks.Task<int> ReserverAsync(emprentuer.ServiceReference1.OuvrageEmprent o);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InscrireAttente", ReplyAction="http://tempuri.org/IService1/InscrireAttenteResponse")]
-        bool InscrireAttente(emprentuer.ServiceReference2.ListeAttente l);
+        bool InscrireAttente(emprentuer.ServiceReference1.ListeAttente l);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InscrireAttente", ReplyAction="http://tempuri.org/IService1/InscrireAttenteResponse")]
-        System.Threading.Tasks.Task<bool> InscrireAttenteAsync(emprentuer.ServiceReference2.ListeAttente l);
+        System.Threading.Tasks.Task<bool> InscrireAttenteAsync(emprentuer.ServiceReference1.ListeAttente l);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Sanctionner", ReplyAction="http://tempuri.org/IService1/SanctionnerResponse")]
         void Sanctionner();
@@ -806,12 +806,12 @@ namespace emprentuer.ServiceReference2 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : emprentuer.ServiceReference2.IService1, System.ServiceModel.IClientChannel {
+    public interface IService1Channel : emprentuer.ServiceReference1.IService1, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<emprentuer.ServiceReference2.IService1>, emprentuer.ServiceReference2.IService1 {
+    public partial class Service1Client : System.ServiceModel.ClientBase<emprentuer.ServiceReference1.IService1>, emprentuer.ServiceReference1.IService1 {
         
         public Service1Client() {
         }
@@ -832,75 +832,75 @@ namespace emprentuer.ServiceReference2 {
                 base(binding, remoteAddress) {
         }
         
-        public bool CreeComptee(emprentuer.ServiceReference2.Etudiant e) {
+        public bool CreeComptee(emprentuer.ServiceReference1.Etudiant e) {
             return base.Channel.CreeComptee(e);
         }
         
-        public System.Threading.Tasks.Task<bool> CreeCompteeAsync(emprentuer.ServiceReference2.Etudiant e) {
+        public System.Threading.Tasks.Task<bool> CreeCompteeAsync(emprentuer.ServiceReference1.Etudiant e) {
             return base.Channel.CreeCompteeAsync(e);
         }
         
-        public bool CreeCompte(emprentuer.ServiceReference2.Ensignant e) {
+        public bool CreeCompte(emprentuer.ServiceReference1.Ensignant e) {
             return base.Channel.CreeCompte(e);
         }
         
-        public System.Threading.Tasks.Task<bool> CreeCompteAsync(emprentuer.ServiceReference2.Ensignant e) {
+        public System.Threading.Tasks.Task<bool> CreeCompteAsync(emprentuer.ServiceReference1.Ensignant e) {
             return base.Channel.CreeCompteAsync(e);
         }
         
-        public System.Collections.Generic.List<emprentuer.ServiceReference2.Ouvrage> Consulter() {
+        public System.Collections.Generic.List<emprentuer.ServiceReference1.Ouvrage> Consulter() {
             return base.Channel.Consulter();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<emprentuer.ServiceReference2.Ouvrage>> ConsulterAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<emprentuer.ServiceReference1.Ouvrage>> ConsulterAsync() {
             return base.Channel.ConsulterAsync();
         }
         
-        public System.Collections.Generic.List<emprentuer.ServiceReference2.Ouvrage> Recherche(emprentuer.ServiceReference2.Ouvrage o) {
+        public System.Collections.Generic.List<emprentuer.ServiceReference1.Ouvrage> Recherche(emprentuer.ServiceReference1.Ouvrage o) {
             return base.Channel.Recherche(o);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<emprentuer.ServiceReference2.Ouvrage>> RechercheAsync(emprentuer.ServiceReference2.Ouvrage o) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<emprentuer.ServiceReference1.Ouvrage>> RechercheAsync(emprentuer.ServiceReference1.Ouvrage o) {
             return base.Channel.RechercheAsync(o);
         }
         
-        public bool Connexionn(emprentuer.ServiceReference2.Etudiant e) {
+        public bool Connexionn(emprentuer.ServiceReference1.Etudiant e) {
             return base.Channel.Connexionn(e);
         }
         
-        public System.Threading.Tasks.Task<bool> ConnexionnAsync(emprentuer.ServiceReference2.Etudiant e) {
+        public System.Threading.Tasks.Task<bool> ConnexionnAsync(emprentuer.ServiceReference1.Etudiant e) {
             return base.Channel.ConnexionnAsync(e);
         }
         
-        public bool Connexion(emprentuer.ServiceReference2.Ensignant e) {
+        public bool Connexion(emprentuer.ServiceReference1.Ensignant e) {
             return base.Channel.Connexion(e);
         }
         
-        public System.Threading.Tasks.Task<bool> ConnexionAsync(emprentuer.ServiceReference2.Ensignant e) {
+        public System.Threading.Tasks.Task<bool> ConnexionAsync(emprentuer.ServiceReference1.Ensignant e) {
             return base.Channel.ConnexionAsync(e);
         }
         
-        public bool ModifierMotPass(emprentuer.ServiceReference2.Etudiant e) {
+        public bool ModifierMotPass(emprentuer.ServiceReference1.Etudiant e) {
             return base.Channel.ModifierMotPass(e);
         }
         
-        public System.Threading.Tasks.Task<bool> ModifierMotPassAsync(emprentuer.ServiceReference2.Etudiant e) {
+        public System.Threading.Tasks.Task<bool> ModifierMotPassAsync(emprentuer.ServiceReference1.Etudiant e) {
             return base.Channel.ModifierMotPassAsync(e);
         }
         
-        public bool Reserver(emprentuer.ServiceReference2.OuvrageEmprent o) {
+        public int Reserver(emprentuer.ServiceReference1.OuvrageEmprent o) {
             return base.Channel.Reserver(o);
         }
         
-        public System.Threading.Tasks.Task<bool> ReserverAsync(emprentuer.ServiceReference2.OuvrageEmprent o) {
+        public System.Threading.Tasks.Task<int> ReserverAsync(emprentuer.ServiceReference1.OuvrageEmprent o) {
             return base.Channel.ReserverAsync(o);
         }
         
-        public bool InscrireAttente(emprentuer.ServiceReference2.ListeAttente l) {
+        public bool InscrireAttente(emprentuer.ServiceReference1.ListeAttente l) {
             return base.Channel.InscrireAttente(l);
         }
         
-        public System.Threading.Tasks.Task<bool> InscrireAttenteAsync(emprentuer.ServiceReference2.ListeAttente l) {
+        public System.Threading.Tasks.Task<bool> InscrireAttenteAsync(emprentuer.ServiceReference1.ListeAttente l) {
             return base.Channel.InscrireAttenteAsync(l);
         }
         

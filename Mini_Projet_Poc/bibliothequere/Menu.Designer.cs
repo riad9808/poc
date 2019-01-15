@@ -41,12 +41,12 @@
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.idConfirmerEmrent = new System.Windows.Forms.TextBox();
-			this.Rendre = new System.Windows.Forms.Button();
 			this.result = new System.Windows.Forms.Label();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.ajouter = new System.Windows.Forms.Button();
 			this.logout = new System.Windows.Forms.Button();
 			this.consulter = new System.Windows.Forms.Button();
+			this.confirmerEmprent = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -70,9 +70,9 @@
 			this.label3.AutoSize = true;
 			this.label3.Location = new System.Drawing.Point(23, 39);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(105, 13);
+			this.label3.Size = new System.Drawing.Size(91, 13);
 			this.label3.TabIndex = 2;
-			this.label3.Text = "codes-barres du livre";
+			this.label3.Text = "numero d\'emprent";
 			// 
 			// codeBarreRendre
 			// 
@@ -155,9 +155,9 @@
 			// 
 			// groupBox3
 			// 
+			this.groupBox3.Controls.Add(this.confirmerEmprent);
 			this.groupBox3.Controls.Add(this.label2);
 			this.groupBox3.Controls.Add(this.idConfirmerEmrent);
-			this.groupBox3.Controls.Add(this.Rendre);
 			this.groupBox3.Location = new System.Drawing.Point(527, 23);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(200, 114);
@@ -170,9 +170,9 @@
 			this.label2.AutoSize = true;
 			this.label2.Location = new System.Drawing.Point(27, 39);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(145, 13);
+			this.label2.Size = new System.Drawing.Size(91, 13);
 			this.label2.TabIndex = 2;
-			this.label2.Text = "Matricule/Numero de la carte";
+			this.label2.Text = "numero d\'emprent";
 			// 
 			// idConfirmerEmrent
 			// 
@@ -180,16 +180,6 @@
 			this.idConfirmerEmrent.Name = "idConfirmerEmrent";
 			this.idConfirmerEmrent.Size = new System.Drawing.Size(100, 20);
 			this.idConfirmerEmrent.TabIndex = 1;
-			// 
-			// Rendre
-			// 
-			this.Rendre.Location = new System.Drawing.Point(119, 84);
-			this.Rendre.Name = "Rendre";
-			this.Rendre.Size = new System.Drawing.Size(75, 23);
-			this.Rendre.TabIndex = 0;
-			this.Rendre.Text = "confirmer";
-			this.Rendre.UseVisualStyleBackColor = true;
-			this.Rendre.Click += new System.EventHandler(this.Rendre_Click);
 			// 
 			// result
 			// 
@@ -237,6 +227,16 @@
 			this.consulter.UseVisualStyleBackColor = true;
 			this.consulter.Click += new System.EventHandler(this.consulter_Click);
 			// 
+			// confirmerEmprent
+			// 
+			this.confirmerEmprent.Location = new System.Drawing.Point(118, 85);
+			this.confirmerEmprent.Name = "confirmerEmprent";
+			this.confirmerEmprent.Size = new System.Drawing.Size(75, 23);
+			this.confirmerEmprent.TabIndex = 3;
+			this.confirmerEmprent.Text = "confirmer";
+			this.confirmerEmprent.UseVisualStyleBackColor = true;
+			this.confirmerEmprent.Click += new System.EventHandler(this.confirmerEmprent_Click);
+			// 
 			// Menu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,7 +272,6 @@
 		private System.Windows.Forms.Label result;
 		private System.Windows.Forms.Button emprent;
 		private System.Windows.Forms.Button inscription;
-		private System.Windows.Forms.Button Rendre;
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.Button ajouter;
 		private System.Windows.Forms.Button logout;
@@ -285,5 +284,6 @@
 		private System.Windows.Forms.TextBox idConfirmerEmrent;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox codeBarreRendre;
+		private System.Windows.Forms.Button confirmerEmprent;
 	}
 }

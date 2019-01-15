@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace bibliothequere.ServiceReference1 {
+namespace bibliothequere.ServiceReference2 {
     using System.Runtime.Serialization;
     using System;
     
@@ -17,13 +17,13 @@ namespace bibliothequere.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Ouvrage", Namespace="http://schemas.datacontract.org/2004/07/wcf")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bibliothequere.ServiceReference1.OuvrageEmprent))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<bibliothequere.ServiceReference1.Ouvrage>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bibliothequere.ServiceReference1.Bibliothequer))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bibliothequere.ServiceReference1.Ensignant))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bibliothequere.ServiceReference1.Etudiant))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<bibliothequere.ServiceReference1.Bibliothequer>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<object>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bibliothequere.ServiceReference2.OuvrageEmprent))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<bibliothequere.ServiceReference2.Ouvrage>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bibliothequere.ServiceReference2.Bibliothequer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bibliothequere.ServiceReference2.Ensignant))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(bibliothequere.ServiceReference2.Etudiant))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<bibliothequere.ServiceReference2.Bibliothequer>))]
     public partial class Ouvrage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -726,65 +726,65 @@ namespace bibliothequere.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService2")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference2.IService2")]
     public interface IService2 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/AjouterOuvrage", ReplyAction="http://tempuri.org/IService2/AjouterOuvrageResponse")]
-        bool AjouterOuvrage(bibliothequere.ServiceReference1.Ouvrage o);
+        bool AjouterOuvrage(bibliothequere.ServiceReference2.Ouvrage o);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/AjouterOuvrage", ReplyAction="http://tempuri.org/IService2/AjouterOuvrageResponse")]
-        System.Threading.Tasks.Task<bool> AjouterOuvrageAsync(bibliothequere.ServiceReference1.Ouvrage o);
+        System.Threading.Tasks.Task<bool> AjouterOuvrageAsync(bibliothequere.ServiceReference2.Ouvrage o);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/ConfirmerEmprent", ReplyAction="http://tempuri.org/IService2/ConfirmerEmprentResponse")]
-        bool ConfirmerEmprent(bibliothequere.ServiceReference1.OuvrageEmprent e);
+        bool ConfirmerEmprent(bibliothequere.ServiceReference2.OuvrageEmprent e);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/ConfirmerEmprent", ReplyAction="http://tempuri.org/IService2/ConfirmerEmprentResponse")]
-        System.Threading.Tasks.Task<bool> ConfirmerEmprentAsync(bibliothequere.ServiceReference1.OuvrageEmprent e);
+        System.Threading.Tasks.Task<bool> ConfirmerEmprentAsync(bibliothequere.ServiceReference2.OuvrageEmprent e);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/Consulter", ReplyAction="http://tempuri.org/IService2/ConsulterResponse")]
-        System.Collections.Generic.List<bibliothequere.ServiceReference1.Ouvrage> Consulter();
+        System.Collections.Generic.List<bibliothequere.ServiceReference2.Ouvrage> Consulter();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/Consulter", ReplyAction="http://tempuri.org/IService2/ConsulterResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<bibliothequere.ServiceReference1.Ouvrage>> ConsulterAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<bibliothequere.ServiceReference2.Ouvrage>> ConsulterAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/Connexion", ReplyAction="http://tempuri.org/IService2/ConnexionResponse")]
-        bool Connexion(bibliothequere.ServiceReference1.Bibliothequer b);
+        bool Connexion(bibliothequere.ServiceReference2.Bibliothequer b);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/Connexion", ReplyAction="http://tempuri.org/IService2/ConnexionResponse")]
-        System.Threading.Tasks.Task<bool> ConnexionAsync(bibliothequere.ServiceReference1.Bibliothequer b);
+        System.Threading.Tasks.Task<bool> ConnexionAsync(bibliothequere.ServiceReference2.Bibliothequer b);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/ConfirmerCompte", ReplyAction="http://tempuri.org/IService2/ConfirmerCompteResponse")]
-        bool ConfirmerCompte(bibliothequere.ServiceReference1.Ensignant e);
+        bool ConfirmerCompte(bibliothequere.ServiceReference2.Ensignant e);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/ConfirmerCompte", ReplyAction="http://tempuri.org/IService2/ConfirmerCompteResponse")]
-        System.Threading.Tasks.Task<bool> ConfirmerCompteAsync(bibliothequere.ServiceReference1.Ensignant e);
+        System.Threading.Tasks.Task<bool> ConfirmerCompteAsync(bibliothequere.ServiceReference2.Ensignant e);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/ConfirmerComptee", ReplyAction="http://tempuri.org/IService2/ConfirmerCompteeResponse")]
-        bool ConfirmerComptee(bibliothequere.ServiceReference1.Etudiant e);
+        bool ConfirmerComptee(bibliothequere.ServiceReference2.Etudiant e);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/ConfirmerComptee", ReplyAction="http://tempuri.org/IService2/ConfirmerCompteeResponse")]
-        System.Threading.Tasks.Task<bool> ConfirmerCompteeAsync(bibliothequere.ServiceReference1.Etudiant e);
+        System.Threading.Tasks.Task<bool> ConfirmerCompteeAsync(bibliothequere.ServiceReference2.Etudiant e);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/RendreEmprent", ReplyAction="http://tempuri.org/IService2/RendreEmprentResponse")]
-        bool RendreEmprent(bibliothequere.ServiceReference1.OuvrageEmprent o);
+        bool RendreEmprent(bibliothequere.ServiceReference2.OuvrageEmprent o);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/RendreEmprent", ReplyAction="http://tempuri.org/IService2/RendreEmprentResponse")]
-        System.Threading.Tasks.Task<bool> RendreEmprentAsync(bibliothequere.ServiceReference1.OuvrageEmprent o);
+        System.Threading.Tasks.Task<bool> RendreEmprentAsync(bibliothequere.ServiceReference2.OuvrageEmprent o);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/ListBibliothequeur", ReplyAction="http://tempuri.org/IService2/ListBibliothequeurResponse")]
-        System.Collections.Generic.List<bibliothequere.ServiceReference1.Bibliothequer> ListBibliothequeur();
+        System.Collections.Generic.List<bibliothequere.ServiceReference2.Bibliothequer> ListBibliothequeur();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService2/ListBibliothequeur", ReplyAction="http://tempuri.org/IService2/ListBibliothequeurResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<bibliothequere.ServiceReference1.Bibliothequer>> ListBibliothequeurAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<bibliothequere.ServiceReference2.Bibliothequer>> ListBibliothequeurAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService2Channel : bibliothequere.ServiceReference1.IService2, System.ServiceModel.IClientChannel {
+    public interface IService2Channel : bibliothequere.ServiceReference2.IService2, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service2Client : System.ServiceModel.ClientBase<bibliothequere.ServiceReference1.IService2>, bibliothequere.ServiceReference1.IService2 {
+    public partial class Service2Client : System.ServiceModel.ClientBase<bibliothequere.ServiceReference2.IService2>, bibliothequere.ServiceReference2.IService2 {
         
         public Service2Client() {
         }
@@ -805,67 +805,67 @@ namespace bibliothequere.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public bool AjouterOuvrage(bibliothequere.ServiceReference1.Ouvrage o) {
+        public bool AjouterOuvrage(bibliothequere.ServiceReference2.Ouvrage o) {
             return base.Channel.AjouterOuvrage(o);
         }
         
-        public System.Threading.Tasks.Task<bool> AjouterOuvrageAsync(bibliothequere.ServiceReference1.Ouvrage o) {
+        public System.Threading.Tasks.Task<bool> AjouterOuvrageAsync(bibliothequere.ServiceReference2.Ouvrage o) {
             return base.Channel.AjouterOuvrageAsync(o);
         }
         
-        public bool ConfirmerEmprent(bibliothequere.ServiceReference1.OuvrageEmprent e) {
+        public bool ConfirmerEmprent(bibliothequere.ServiceReference2.OuvrageEmprent e) {
             return base.Channel.ConfirmerEmprent(e);
         }
         
-        public System.Threading.Tasks.Task<bool> ConfirmerEmprentAsync(bibliothequere.ServiceReference1.OuvrageEmprent e) {
+        public System.Threading.Tasks.Task<bool> ConfirmerEmprentAsync(bibliothequere.ServiceReference2.OuvrageEmprent e) {
             return base.Channel.ConfirmerEmprentAsync(e);
         }
         
-        public System.Collections.Generic.List<bibliothequere.ServiceReference1.Ouvrage> Consulter() {
+        public System.Collections.Generic.List<bibliothequere.ServiceReference2.Ouvrage> Consulter() {
             return base.Channel.Consulter();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<bibliothequere.ServiceReference1.Ouvrage>> ConsulterAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<bibliothequere.ServiceReference2.Ouvrage>> ConsulterAsync() {
             return base.Channel.ConsulterAsync();
         }
         
-        public bool Connexion(bibliothequere.ServiceReference1.Bibliothequer b) {
+        public bool Connexion(bibliothequere.ServiceReference2.Bibliothequer b) {
             return base.Channel.Connexion(b);
         }
         
-        public System.Threading.Tasks.Task<bool> ConnexionAsync(bibliothequere.ServiceReference1.Bibliothequer b) {
+        public System.Threading.Tasks.Task<bool> ConnexionAsync(bibliothequere.ServiceReference2.Bibliothequer b) {
             return base.Channel.ConnexionAsync(b);
         }
         
-        public bool ConfirmerCompte(bibliothequere.ServiceReference1.Ensignant e) {
+        public bool ConfirmerCompte(bibliothequere.ServiceReference2.Ensignant e) {
             return base.Channel.ConfirmerCompte(e);
         }
         
-        public System.Threading.Tasks.Task<bool> ConfirmerCompteAsync(bibliothequere.ServiceReference1.Ensignant e) {
+        public System.Threading.Tasks.Task<bool> ConfirmerCompteAsync(bibliothequere.ServiceReference2.Ensignant e) {
             return base.Channel.ConfirmerCompteAsync(e);
         }
         
-        public bool ConfirmerComptee(bibliothequere.ServiceReference1.Etudiant e) {
+        public bool ConfirmerComptee(bibliothequere.ServiceReference2.Etudiant e) {
             return base.Channel.ConfirmerComptee(e);
         }
         
-        public System.Threading.Tasks.Task<bool> ConfirmerCompteeAsync(bibliothequere.ServiceReference1.Etudiant e) {
+        public System.Threading.Tasks.Task<bool> ConfirmerCompteeAsync(bibliothequere.ServiceReference2.Etudiant e) {
             return base.Channel.ConfirmerCompteeAsync(e);
         }
         
-        public bool RendreEmprent(bibliothequere.ServiceReference1.OuvrageEmprent o) {
+        public bool RendreEmprent(bibliothequere.ServiceReference2.OuvrageEmprent o) {
             return base.Channel.RendreEmprent(o);
         }
         
-        public System.Threading.Tasks.Task<bool> RendreEmprentAsync(bibliothequere.ServiceReference1.OuvrageEmprent o) {
+        public System.Threading.Tasks.Task<bool> RendreEmprentAsync(bibliothequere.ServiceReference2.OuvrageEmprent o) {
             return base.Channel.RendreEmprentAsync(o);
         }
         
-        public System.Collections.Generic.List<bibliothequere.ServiceReference1.Bibliothequer> ListBibliothequeur() {
+        public System.Collections.Generic.List<bibliothequere.ServiceReference2.Bibliothequer> ListBibliothequeur() {
             return base.Channel.ListBibliothequeur();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<bibliothequere.ServiceReference1.Bibliothequer>> ListBibliothequeurAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<bibliothequere.ServiceReference2.Bibliothequer>> ListBibliothequeurAsync() {
             return base.Channel.ListBibliothequeurAsync();
         }
     }

@@ -1,4 +1,4 @@
-﻿using bibliothequere.ServiceReference1;
+﻿using bibliothequere.ServiceReference2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

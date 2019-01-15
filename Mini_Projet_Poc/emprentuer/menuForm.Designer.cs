@@ -1,4 +1,4 @@
-﻿using emprentuer.ServiceReference2;
+﻿using emprentuer.ServiceReference1;
 
 namespace emprentuer
 {
@@ -191,7 +191,7 @@ namespace emprentuer
 			// 
 			// ouvrageBindingSource
 			// 
-			this.ouvrageBindingSource.DataSource = typeof(emprentuer.ServiceReference2.Ouvrage);
+			this.ouvrageBindingSource.DataSource = typeof(emprentuer.ServiceReference1.Ouvrage);
 			// 
 			// menuFormBindingSource
 			// 

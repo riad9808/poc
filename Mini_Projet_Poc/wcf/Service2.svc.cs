@@ -236,7 +236,7 @@ namespace wcf
 			try
 			{
 				connexion.Open();
-				MySqlCommand sql1 = new MySqlCommand("insert into ouvrage(codebare,type,theme,titre,auteur) values(" + o.CodeBarre + ",'+" + o.Type + "','" + o.Theme + "','" + o.Titre + "','" + o.Auteur + "')", connexion); MySqlDataReader rd1;
+				MySqlCommand sql1 = new MySqlCommand("insert into ouvrage(codebare,type,theme,titre,auteur) values(" + o.CodeBarre + ",'" + o.Type + "','" + o.Theme + "','" + o.Titre + "','" + o.Auteur + "')", connexion); MySqlDataReader rd1;
 				rd1 = sql1.ExecuteReader();
 				connexion.Close();
 				result = true;
@@ -330,12 +330,12 @@ namespace wcf
 		public bool ConfirmerEmprent(OuvrageEmprent e)
 		{
 			MySqlConnection connexion = new MySqlConnection("database=bibliotheque; server=localhost; user id=root; pwd=1898;");
-			bool res = false;
+			
 
 			try
 			{
 				connexion.Open();
-				MySqlCommand sql1 = new MySqlCommand("update ouvrageemprent set etat=1 where matricule='" + e.Id + "'  ", connexion);
+				MySqlCommand sql1 = new MySqlCommand("update ouvrageemprent set etat=1 where numemprent=" + e.Numemprent + "  ", connexion);
 				MySqlDataReader rd1;
 				rd1 = sql1.ExecuteReader();
 				connexion.Close();
@@ -345,8 +345,9 @@ namespace wcf
 			catch
 			{
 				Console.WriteLine("erreuer");
+				return false;
 			}
-			return res;
+			
 		}
 
 
@@ -420,7 +421,7 @@ namespace wcf
 			}
 			catch
 			{
-				Console.WriteLine("erreuer");
+				Console.WriteLine("erreur");
 			}
 			return res;
 		}

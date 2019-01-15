@@ -1,4 +1,4 @@
-﻿using bibliothequere.ServiceReference1;
+﻿using bibliothequere.ServiceReference2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,7 +33,7 @@ namespace bibliothequere
 					   new ChannelFactory<IService2>("BasicHttpBinding_IService2");
 				IService2 operation = channelFactory.CreateChannel();
 				OuvrageEmprent o = new OuvrageEmprent();
-				o.CodeBarre = Convert.ToInt32(a);
+				o.Numemprent = Convert.ToInt32(a);
 				bool b = operation.RendreEmprent(o);
 				if (b)
 				{
@@ -107,36 +107,7 @@ namespace bibliothequere
 			}
 		}
 
-		private void Rendre_Click(object sender, EventArgs e)
-		{
-			if (idConfirmerEmrent.Text == "")
-			{
-				result.Text = "Remplissez le formulaire ";
-				result.ForeColor = Color.Red;
-			}
-			else
-			{
-
-
-				string i = idConfirmerEmrent.Text;
-				ChannelFactory<IService2> channelFactory =
-					   new ChannelFactory<IService2>("BasicHttpBinding_IService2");
-				IService2 operation = channelFactory.CreateChannel();
-				OuvrageEmprent o = new OuvrageEmprent();
-				o.Id = i;
-				bool b=operation.RendreEmprent(o);
-				if (b)
-				{
-					result.Text = "succes ";
-					result.ForeColor = Color.Green;
-				}
-				else
-				{
-					result.Text = "erreur ";
-					result.ForeColor = Color.Red;
-				}
-			}
-		}
+		
 
 		private void logout_Click(object sender, EventArgs e)
 		{
@@ -170,6 +141,37 @@ namespace bibliothequere
 			Ajout a = new Ajout();
 			a.Show();
 			
+		}
+
+		private void confirmerEmprent_Click(object sender, EventArgs e)
+		{
+			if (idConfirmerEmrent.Text == "")
+			{
+				result.Text = "Remplissez le formulaire ";
+				result.ForeColor = Color.Red;
+			}
+			else
+			{
+
+
+				int i = Convert.ToInt32(idConfirmerEmrent.Text);
+				ChannelFactory<IService2> channelFactory =
+					   new ChannelFactory<IService2>("BasicHttpBinding_IService2");
+				IService2 operation = channelFactory.CreateChannel();
+				OuvrageEmprent o = new OuvrageEmprent();
+				o.Numemprent = i;
+				bool b = operation.ConfirmerEmprent(o);
+				if (b)
+				{
+					result.Text = "succes ";
+					result.ForeColor = Color.Green;
+				}
+				else
+				{
+					result.Text = "erreur ";
+					result.ForeColor = Color.Red;
+				}
+			}
 		}
 	}
 }

@@ -28,7 +28,7 @@ namespace wcf
 		[OperationContract]
 		bool ModifierMotPass(Etudiant e);
 		[OperationContract]
-		bool Reserver(OuvrageEmprent o);
+		int Reserver(OuvrageEmprent o);
 		[OperationContract]
 		bool InscrireAttente(ListeAttente l);
 		[OperationContract]

@@ -194,6 +194,7 @@ namespace wcf
 
 		public bool Connexionn(Etudiant e)
 		{
+			Console.WriteLine("from hosted");
 			bool res = false;
 			List<Etudiant> test = ListEtudiant();
 			for (int i = 0; i < test.Count; i++)
@@ -452,11 +453,11 @@ namespace wcf
 			return res;
 		}
 
-		public bool Reserver(OuvrageEmprent o)
+		public int Reserver(OuvrageEmprent o)
 		{
 			MySqlConnection connexion = new MySqlConnection("database=bibliotheque; server=localhost; user id=root; pwd=1898;");
 
-			bool res = false;
+			int res = 8;
 			List<Ouvrage> ouvrage = ListOuvrage();
 			List<Etudiant> etudian = ListEtudiant();
 			List<Ensignant> ens = ListEnsignant();
@@ -466,7 +467,7 @@ namespace wcf
 				{
 					if ((etudian[i].EtatCompte == false) || (etudian[i].EtatSanction == true))
 					{
-						return false;
+						return -1;
 					}
 				}
 			}
@@ -476,7 +477,7 @@ namespace wcf
 				{
 					if ((ens[i].EtatCompte == false) || (ens[i].EtatSanction == true))
 					{
-						return false;
+						return -1;
 					}
 				}
 			}
@@ -490,19 +491,20 @@ namespace wcf
 						l.CodeBarre = o.CodeBarre;
 						l.Id = o.Id;
 						InscrireAttente(l);
-						return false;
+						return 0;
 					}
 				}
 			}
+			DateTime d = DateTime.Now;
+
 			try
 			{
 				connexion.Open();
-				DateTime d = DateTime.Now;
 				MySqlCommand sql1 = new MySqlCommand("insert into ouvrageemprent (codebare,id,date) values('" + o.CodeBarre + "','" + o.Id + "','" + d.Year + "-" + d.Month + "-" + d.Day + "')", connexion);
 				MySqlDataReader rd1;
 				rd1 = sql1.ExecuteReader();
 				connexion.Close();
-				res = true;
+				
 
 			}
 			catch
@@ -516,13 +518,37 @@ namespace wcf
 				MySqlDataReader rd1;
 				rd1 = sql1.ExecuteReader();
 				connexion.Close();
-				res = true;
+				
 
 			}
 			catch
 			{
-				Console.WriteLine("erreuer");
+				Console.WriteLine("erreur");
 			}
+			try
+			{
+				connexion.Open();
+				MySqlCommand sql1 = new MySqlCommand("select numemprent from ouvrageemprent where codebare="+ o.CodeBarre +" and id='"+o.Id+"' and date='"+d.Year+"-"+d.Month+"-"+d.Day+"'", connexion);
+				MySqlDataReader rd1;
+				rd1 = sql1.ExecuteReader();
+				while (rd1.Read())
+				{
+					res = int.Parse(rd1["numemprent"].ToString());
+				}
+					connexion.Close();
+			
+
+			}
+			catch
+			{
+				Console.WriteLine("erreur");
+			}
+
+
+
+
+
+
 			return res;
 		}
 
@@ -653,5 +679,39 @@ namespace wcf
 			}
 		}
 
+		public bool AjouterOuvrage(Ouvrage o)
+		{
+			throw new NotImplementedException();
+		}
+
+		public bool ConfirmerEmprent(OuvrageEmprent e)
+		{
+			throw new NotImplementedException();
+		}
+
+		public bool Connexion(Bibliothequer b)
+		{
+			throw new NotImplementedException();
+		}
+
+		public bool ConfirmerCompte(Ensignant e)
+		{
+			throw new NotImplementedException();
+		}
+
+		public bool ConfirmerComptee(Etudiant e)
+		{
+			throw new NotImplementedException();
+		}
+
+		public bool RendreEmprent(OuvrageEmprent o)
+		{
+			throw new NotImplementedException();
+		}
+
+		public List<Bibliothequer> ListBibliothequeur()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

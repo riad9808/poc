@@ -54,7 +54,7 @@
     <Compile Include="Ajout.Designer.cs">
       <DependentUpon>Ajout.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+    <Compile Include="Connected Services\ServiceReference2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -91,25 +91,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Connected Services\ServiceReference1\bibliothequere.ServiceReference1.Bibliothequer.datasource">
+    <None Include="Connected Services\ServiceReference2\bibliothequere.ServiceReference2.Bibliothequer.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\bibliothequere.ServiceReference1.Ouvrage.datasource">
+    <None Include="Connected Services\ServiceReference2\bibliothequere.ServiceReference2.Ouvrage.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\Service2.wsdl" />
-    <None Include="Connected Services\ServiceReference1\Service2.xsd">
+    <None Include="Connected Services\ServiceReference2\item.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\Service21.xsd">
+    <None Include="Connected Services\ServiceReference2\item1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\Service22.xsd">
+    <None Include="Connected Services\ServiceReference2\item2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\Service23.xsd">
+    <None Include="Connected Services\ServiceReference2\item3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServiceReference2\Service2.wsdl" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -129,19 +129,19 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReference2\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\Service2.disco" />
+    <None Include="Connected Services\ServiceReference2\item.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference2\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference2\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+    <None Include="Connected Services\ServiceReference2\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

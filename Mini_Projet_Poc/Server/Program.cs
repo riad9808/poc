@@ -12,10 +12,19 @@ namespace Server
 	{
 		static void Main(string[] args)
 		{
-			ServiceHost host = new ServiceHost(typeof(Service2));
-			host.Open();
-			Console.WriteLine("Service Hosted Sucessfully");
-			Console.Read();
+			using (ServiceHost host = new ServiceHost(typeof(Service1)))
+			{
+				host.Open();
+				
+				Console.WriteLine("Service1 Started");
+
+				using (ServiceHost host1 = new ServiceHost(typeof(Service2)))
+				{
+					host1.Open();
+					Console.WriteLine("Service2 Started");
+					Console.ReadLine();
+				}
+			}
 		}
 	}
 }

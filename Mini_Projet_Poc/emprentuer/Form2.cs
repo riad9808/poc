@@ -2,7 +2,8 @@
 
 
 
-using emprentuer.ServiceReference2;
+using emprentuer.ServiceReference1;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,6 +50,19 @@ namespace emprentuer
 
 		private void validerConexion_Click(object sender, EventArgs e)
 		{
+			IService1 operation=null;
+			try
+			{
+				ChannelFactory<IService1> channelFactory =
+					new ChannelFactory<IService1>("BasicHttpBinding_IService1");
+				operation = channelFactory.CreateChannel();
+				operation.Sanctionner();
+			}
+			catch (Exception ex)
+			{
+
+			}
+
 			string id=textBox1.Text;
 			string pass = textBox2.Text.ToString();
 			if (id == "" || pass == "")
@@ -67,10 +81,10 @@ namespace emprentuer
 				
 					try
 					{
-						ChannelFactory<IService1> channelFactory =
-						new ChannelFactory<IService1>("BasicHttpBinding_IService1");
-						IService1 operation = channelFactory.CreateChannel();
-						operation.Sanctionner();
+					
+
+						
+
 						b = operation.Connexionn(etudiantt);
 
 					}
@@ -86,10 +100,9 @@ namespace emprentuer
 					ensi.Password = pass;
 					try
 					{
-						ChannelFactory<IService1> channelFactory =
-					new ChannelFactory<IService1>("BasicHttpBinding_IService1");
-						IService1 operation = channelFactory.CreateChannel();
-						operation.Sanctionner();
+						
+
+						
 						b = operation.Connexion(ensi);
 
 					}

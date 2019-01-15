@@ -1,4 +1,4 @@
-﻿using emprentuer.ServiceReference2;
+﻿using emprentuer.ServiceReference1;
 
 using System;
 using System.Collections.Generic;
@@ -109,18 +109,20 @@ namespace emprentuer
 			ChannelFactory<IService1> channelFactory =
 						   new ChannelFactory<IService1>("BasicHttpBinding_IService1");
 			IService1 operation = channelFactory.CreateChannel();
-			bool b=operation.Reserver(oe);
-			if (b)
-			{
-				result.Text = "reservation effectuer ";
-				result.ForeColor = Color.Green;
-			}
-			else
+			int b = operation.Reserver(oe);
+			Console.WriteLine(b);
+			if (b==0)
 			{
 				result.Text = "vous avez étè ajouter a la liste d'attente ";
 				result.ForeColor = Color.Blue;
+				
 			}
-
+			else
+			{
+				result.Text = "reservation effectuer votre numero d'emprent est : "+b;
+				result.ForeColor = Color.Green;
+			}
+			
 		}
 
 		private void logout_Click(object sender, EventArgs e)
