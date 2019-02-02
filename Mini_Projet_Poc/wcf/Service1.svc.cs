@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
@@ -593,7 +595,7 @@ namespace wcf
 									}
 									catch
 									{
-										Console.WriteLine("erreuer");
+										Console.WriteLine("erreur SANCTIONNER 1");
 									}
 								}
 								else
@@ -610,7 +612,7 @@ namespace wcf
 									}
 									catch
 									{
-										Console.WriteLine("erreuer");
+										Console.WriteLine("erreur sanctionner 2");
 									}
 								}
 							}
@@ -636,7 +638,7 @@ namespace wcf
 									}
 									catch
 									{
-										Console.WriteLine("erreuer");
+										Console.WriteLine("erreur sanctionner 3");
 									}
 								}
 								else
@@ -653,7 +655,7 @@ namespace wcf
 									}
 									catch
 									{
-										Console.WriteLine("erreuer");
+										Console.WriteLine("erreur sanctionner  4");
 									}
 								}
 							}
@@ -663,7 +665,8 @@ namespace wcf
 						try
 						{
 							connexion.Open();
-							MySqlCommand sql1 = new MySqlCommand("update ouvrage set etat=0 where codebarre=" + ouvemp[i].CodeBarre + " ", connexion);
+							Console.WriteLine(ouvemp[i].CodeBarre);
+							MySqlCommand sql1 = new MySqlCommand("update ouvrage set etat=0 where codebare=" + ouvemp[i].CodeBarre + " ", connexion);
 							MySqlDataReader rd1;
 							rd1 = sql1.ExecuteReader();
 							connexion.Close();
@@ -672,46 +675,171 @@ namespace wcf
 						}
 						catch
 						{
-							Console.WriteLine("erreuer");
+							Console.WriteLine("erreur sanctionner 5");
 						}
-					}
+                        ListeAttente a = new ListeAttente();
+                        a.CodeBarre = ouvemp[i].CodeBarre;
+                        try
+                        {
+                            connexion.Open();
+							Console.WriteLine(ouvemp[i].Numemprent);
+
+							MySqlCommand sql1 = new MySqlCommand("delete from ouvrageemprent where numemprent="+ouvemp[i].Numemprent +" ", connexion);
+                            MySqlDataReader rd1;
+                            rd1 = sql1.ExecuteReader();
+                            connexion.Close();
+
+
+                        }
+                        catch
+                        {
+                            Console.WriteLine("erreur sanctionner  6");
+                        }
+
+                        Notifier(a);
+
+                     }
 				}
 			}
 		}
 
-		public bool AjouterOuvrage(Ouvrage o)
-		{
-			throw new NotImplementedException();
+
+        public void sendmail(string adresse, Ouvrage o)
+        {
+            try
+            {
+                MailMessage message = new MailMessage();
+                SmtpClient smtp = new SmtpClient();
+                message.From = new MailAddress("companyvpro@gmail.com");
+                message.To.Add(new MailAddress(adresse));
+                message.Subject = " Bibliotheque ";
+                message.IsBodyHtml = true; //to make message body as html 
+                message.Body = "votre " + o.Type + " avec le code barre " + o.CodeBarre + " est désormais disponible veuillez acceder à la platforme pour le reserver";
+                smtp.Port = 587;
+                smtp.Host = "smtp.gmail.com"; //for gmail host  
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential("companyvpro@gmail.com", "licencegl");
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.Send(message);
+
+            }
+            catch (Exception x)
+            {
+                Console.WriteLine(x.ToString());
+            }
+        }
+
+        public Ouvrage GetOuvrage(Ouvrage o)
+        {
+            List<Ouvrage> ouvrages = ListOuvrage();
+            for (int i = 0; i < ouvrages.Count; i++)
+            {
+                if (ouvrages[i].CodeBarre.Equals(o.CodeBarre))
+                {
+                    return ouvrages[i];
+                }
+            }
+            return null;
+        }
+
+
+        public ListeAttente getPrioritaire(ListeAttente att)
+        {
+            MySqlConnection connexion = new MySqlConnection("database=bibliotheque; server=localhost; user id=root; pwd=1898;");
+
+            List<ListeAttente> test = ListAttente();
+            ListeAttente lis = new ListeAttente();
+			lis = null;
+            for (int i = 0; i < test.Count; i++)
+            {
+                if (test[i].CodeBarre.Equals(att.CodeBarre))
+                {
+                    if (lis == null)
+                    {
+                        lis = test[i];
+                    }
+                    else
+                    {
+                        if (test[i].Priorite < lis.Priorite)
+                        {
+                            lis = test[i];
+                        }
+                    }
+
+                }
+            }
+            if (lis != null)
+            {
+                try
+                {
+                    connexion.Open();
+                    MySqlCommand sql1 = new MySqlCommand("delete from listeattente where codebare=" + lis.CodeBarre + " and id='" + lis.Id + "' and priorite =" + lis.Priorite + " ", connexion);
+                    MySqlDataReader rd1;
+                    rd1 = sql1.ExecuteReader();
+                    connexion.Close();
+                }
+                catch
+                {
+                    Console.WriteLine("erreur");
+                }
+            }
+            return lis;
+        }
+
+
+
+
+        public void Notifier(ListeAttente a)
+        {
+
+			try { 
+			Console.WriteLine(a.CodeBarre);
+			ListeAttente lis = new ListeAttente();
+			List<Etudiant> etu = ListEtudiant();
+			List<Ensignant> ens = ListEnsignant();
+			string mail = "";
+			lis = getPrioritaire(a);
+			Console.WriteLine("hahaha" + lis.Id);
+			if (lis != null)
+			{
+				Ouvrage oe = new Ouvrage();
+				oe.CodeBarre = lis.CodeBarre;
+				oe = GetOuvrage(oe);
+
+				for (int i = 0; i < etu.Count; i++)
+				{
+					if (etu[i].NumCarte.Equals(lis.Id))
+					{
+						mail = etu[i].Email;
+					}
+				}
+				if (mail == "")
+				{
+					for (int j = 0; j < ens.Count; j++)
+					{
+						if (ens[j].Matricule.Equals(lis.Id))
+						{
+							mail = ens[j].Email;
+						}
+					}
+				}
+
+				sendmail(mail, oe);
+			}
+
+			}catch(Exception e) { }
 		}
 
-		public bool ConfirmerEmprent(OuvrageEmprent e)
-		{
-			throw new NotImplementedException();
-		}
 
-		public bool Connexion(Bibliothequer b)
-		{
-			throw new NotImplementedException();
-		}
 
-		public bool ConfirmerCompte(Ensignant e)
-		{
-			throw new NotImplementedException();
-		}
 
-		public bool ConfirmerComptee(Etudiant e)
-		{
-			throw new NotImplementedException();
-		}
 
-		public bool RendreEmprent(OuvrageEmprent o)
-		{
-			throw new NotImplementedException();
-		}
 
-		public List<Bibliothequer> ListBibliothequeur()
-		{
-			throw new NotImplementedException();
-		}
+
+
+
+
+
 	}
 }

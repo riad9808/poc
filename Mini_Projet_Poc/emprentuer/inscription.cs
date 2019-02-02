@@ -86,9 +86,9 @@ namespace emprentuer
 
 
 			}
-			string name = prenom.Text;
+			string name = nom.Text;
 			string iden = id.Text;
-			string pren = nom.Text;
+			string pren = prenom.Text;
 			string mail = email.Text;
 			string pass = pwd.Text.ToString();
 			string pass2 = pwd2.Text.ToString();
