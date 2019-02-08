@@ -38,3 +38,16 @@ C:\Users\RIAD\Desktop\poc-version1\Mini_Projet_Poc\emprentuer\obj\Debug\emprentu
 C:\Users\RIAD\Desktop\poc-version1\Mini_Projet_Poc\emprentuer\obj\Debug\emprentuer.csproj.CoreCompileInputs.cache
 C:\Users\RIAD\Desktop\poc-version1\Mini_Projet_Poc\emprentuer\obj\Debug\emprentuer.exe
 C:\Users\RIAD\Desktop\poc-version1\Mini_Projet_Poc\emprentuer\obj\Debug\emprentuer.pdb
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\emprentuer\bin\Debug\emprentuer.exe.config
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\emprentuer\bin\Debug\emprentuer.exe
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\emprentuer\bin\Debug\emprentuer.pdb
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\emprentuer\obj\Debug\emprentuer.homeForm.resources
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\emprentuer\obj\Debug\emprentuer.conexionForm.resources
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\emprentuer\obj\Debug\emprentuer.inscription.resources
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\emprentuer\obj\Debug\emprentuer.menuForm.resources
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\emprentuer\obj\Debug\emprentuer.Properties.Resources.resources
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\emprentuer\obj\Debug\emprentuer.rechercherForm.resources
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\emprentuer\obj\Debug\emprentuer.csproj.GenerateResource.cache
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\emprentuer\obj\Debug\emprentuer.csproj.CoreCompileInputs.cache
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\emprentuer\obj\Debug\emprentuer.exe
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\emprentuer\obj\Debug\emprentuer.pdb

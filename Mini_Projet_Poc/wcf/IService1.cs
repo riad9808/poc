@@ -95,8 +95,15 @@ namespace wcf
 		[DataMember]
 		public string Email { get; set; }
 	}
+	
+	public class ListeAttenteEventArgs : EventArgs
+	{
+	
+		public ListeAttente ListeAttente { get; set; }
+		
+	}
 	[DataContract]
-	public class ListeAttente
+	public class ListeAttente 
 	{
 		[DataMember]
 		public int CodeBarre { get; set; }

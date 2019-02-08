@@ -428,10 +428,25 @@ namespace wcf
 			return res;
 		}
 
+
+
+
+		public delegate void RendreEventHandler(object source, ListeAttenteEventArgs args);
+		//public static event EventHandler<ListeAttenteEventArgs> RendreEvent;
+
+		public static event RendreEventHandler RendreEvent;
 		
-
-
-
+		protected virtual void OnRendreEmprent(ListeAttente a)
+		{
+			
+			Console.WriteLine("Rendre event 1");
+			if(RendreEvent != null)
+			{
+				Console.WriteLine("dans l'event");
+				RendreEvent(this, new ListeAttenteEventArgs() { ListeAttente = a });
+			}
+			Console.WriteLine("Hors Event");
+		}
 
 
 		public bool RendreEmprent(OuvrageEmprent o)
@@ -464,11 +479,17 @@ namespace wcf
 					}
                     ListeAttente a = new ListeAttente();
                     a.CodeBarre = codebare;
-                    Notifier(a);
+					//Notifier(a);
+					OnRendreEmprent(a);
                         }
 			}
 			return res;
 		}
+
+
+
+
+
 
 
         public void sendmail(string adresse,Ouvrage o)

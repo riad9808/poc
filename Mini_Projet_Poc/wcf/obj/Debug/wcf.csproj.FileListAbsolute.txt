@@ -26,3 +26,12 @@ C:\Users\RIAD\Desktop\poc-version1\Mini_Projet_Poc\wcf\obj\Debug\wcf.csproj.Copy
 C:\Users\RIAD\Desktop\poc-version1\Mini_Projet_Poc\wcf\obj\Debug\wcf.dll
 C:\Users\RIAD\Desktop\poc-version1\Mini_Projet_Poc\wcf\obj\Debug\wcf.pdb
 C:\Users\RIAD\Desktop\poc-version1\Mini_Projet_Poc\wcf\obj\Debug\wcf.csprojAssemblyReference.cache
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\wcf\bin\wcf.dll.config
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\wcf\bin\wcf.dll
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\wcf\bin\wcf.pdb
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\wcf\bin\MySql.Data.dll
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\wcf\bin\MySql.Data.xml
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\wcf\obj\Debug\wcf.csproj.CoreCompileInputs.cache
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\wcf\obj\Debug\wcf.csproj.CopyComplete
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\wcf\obj\Debug\wcf.dll
+C:\Users\RIAD\Desktop\Mini_Projet_Poc\wcf\obj\Debug\wcf.pdb

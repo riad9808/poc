@@ -452,7 +452,21 @@ namespace wcf
 			{
 				Console.WriteLine("erreuer");
 			}
+			var Service1 = new Service2();
+			var s1 = new Service1();
+			Console.WriteLine("avant inscription");
+			Service2.RendreEvent += s1.onRendre;
+			Console.WriteLine();
+			Console.WriteLine("apres inscription");
 			return res;
+		}
+
+		public void onRendre(object source, ListeAttenteEventArgs args)
+		{
+			Console.WriteLine("on rendre");
+			
+			Console.WriteLine("code "+args.ListeAttente.CodeBarre);
+			Notifier(args.ListeAttente);
 		}
 
 		public int Reserver(OuvrageEmprent o)
@@ -602,8 +616,9 @@ namespace wcf
 								{
 									try
 									{
+										int las = etudiant[j].NbNonReserve + 1;
 										connexion.Open();
-										MySqlCommand sql1 = new MySqlCommand("update emprenteur set nonConfirme=" + etudiant[j].NbNonReserve + 1 + " where matricule='" + etudiant[j].NumCarte + "'  ", connexion);
+										MySqlCommand sql1 = new MySqlCommand("update emprenteur set nonConfirme=" +las + " where matricule='" + etudiant[j].NumCarte + "'  ", connexion);
 										MySqlDataReader rd1;
 										rd1 = sql1.ExecuteReader();
 										connexion.Close();
@@ -645,8 +660,9 @@ namespace wcf
 								{
 									try
 									{
+										int last = ensignant[h].NbNonReserve + 1;
 										connexion.Open();
-										MySqlCommand sql1 = new MySqlCommand("update emprenteur set nonConfirme=" + ensignant[h].NbNonReserve + 1 + " where matricule='" + ensignant[h].Matricule + "'  ", connexion);
+										MySqlCommand sql1 = new MySqlCommand("update emprenteur set nonConfirme=" + last  + " where matricule='" + ensignant[h].Matricule + "'  ", connexion);
 										MySqlDataReader rd1;
 										rd1 = sql1.ExecuteReader();
 										connexion.Close();
@@ -800,7 +816,7 @@ namespace wcf
 			List<Ensignant> ens = ListEnsignant();
 			string mail = "";
 			lis = getPrioritaire(a);
-			Console.WriteLine("hahaha" + lis.Id);
+			//Console.WriteLine("hahaha" + lis.Id);
 			if (lis != null)
 			{
 				Ouvrage oe = new Ouvrage();
